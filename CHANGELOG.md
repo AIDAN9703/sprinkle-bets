@@ -1,11 +1,11 @@
 # Changelog
 
-This changelog references changes made both to the FastAPI backend, `fastapi_backend`, and the
-frontend TypeScript client, `nextjs-frontend`.
+This changelog references changes made both to the FastAPI backend, `backend`, and the
+frontend TypeScript client, `web`.
 
 !!! note
-    The backend and the frontend are versioned together, that is, they have the same version number.
-    When you update the backend, you should also update the frontend to the same version.
+The backend and the frontend are versioned together, that is, they have the same version number.
+When you update the backend, you should also update the frontend to the same version.
 
 ## 0.0.6 <small>September 1, 2025</small> {id="0.0.6"}
 

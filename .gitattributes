@@ -1,0 +1,19 @@
+# Ensure Python files use LF
+*.py text eol=lf
+
+# Ensure JavaScript/TypeScript files use LF
+*.js text eol=lf
+*.jsx text eol=lf
+*.ts text eol=lf
+*.tsx text eol=lf
+*.mjs text eol=lf
+
+# Ensure JSON/YAML files use LF
+*.json text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+
+# Docker files
+Dockerfile text eol=lf
+*.dockerfile text eol=lf
+

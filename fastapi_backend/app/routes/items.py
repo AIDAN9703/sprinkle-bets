@@ -27,6 +27,7 @@ async def read_item(
 ):
     params = Params(page=page, size=size)
     query = select(Item).filter(Item.user_id == user.id)
+    print(query)
     return await apaginate(db, query, params, transformer=transform_items)
 
 

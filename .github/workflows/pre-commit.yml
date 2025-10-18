@@ -6,7 +6,6 @@ on:
 
 jobs:
   pre-commit:
-
     runs-on: ubuntu-latest
 
     env:
@@ -17,7 +16,6 @@ jobs:
       VERIFICATION_SECRET_KEY: ${{ secrets.VERIFICATION_SECRET_KEY }}
       OPENAPI_OUTPUT_FILE: ${{ secrets.OPENAPI_OUTPUT_FILE }}
       CORS_ORIGINS: ${{ secrets.CORS_ORIGINS }}
-
 
     steps:
       - name: Checkout code
@@ -32,7 +30,7 @@ jobs:
         uses: astral-sh/setup-uv@v5
 
       - name: Install the project
-        working-directory: ./fastapi_backend
+        working-directory: ./backend
         run: uv sync --all-extras --dev
 
       - name: Install pnpm
@@ -47,7 +45,7 @@ jobs:
           node-version: "20"
 
       - name: Install Node dependencies
-        working-directory: ./nextjs-frontend
+        working-directory: ./web
         run: pnpm install
 
       - name: Run pre-commit
