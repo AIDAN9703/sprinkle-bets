@@ -23,7 +23,7 @@ export default function AboutPage() {
   return (
     <main className="min-h-screen pt-16 bg-white">
       {/* Hero Section */}
-      <section className="relative py-32 overflow-hidden bg-gradient-to-br from-purple-50 via-white to-purple-100">
+      <section className="relative py-32 overflow-hidden bg-linear-to-br from-purple-50 via-white to-purple-100">
         {/* Animated Background Orbs */}
         <div
           className="absolute top-20 left-10 w-96 h-96 hero-orb hero-orb-purple"
@@ -46,7 +46,7 @@ export default function AboutPage() {
             </Badge>
             <h1 className="text-6xl md:text-7xl font-extrabold mb-8 leading-tight">
               Bringing{" "}
-              <span className="bg-gradient-to-r from-purple-600 via-purple-700 to-purple-900 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-purple-600 via-purple-700 to-purple-900 bg-clip-text text-transparent">
                 Trust
               </span>{" "}
               to Sports Betting Content
@@ -176,7 +176,7 @@ export default function AboutPage() {
       </section>
 
       {/* The Solution Section */}
-      <section className="py-24 bg-gradient-to-br from-purple-50 via-white to-purple-50 relative overflow-hidden">
+      <section className="py-24 bg-linear-to-br from-purple-50 via-white to-purple-50 relative overflow-hidden">
         <div className="absolute top-10 right-10 w-64 h-64 hero-orb hero-orb-purple opacity-30"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -184,7 +184,7 @@ export default function AboutPage() {
             <Badge className="mb-6 glass-purple text-accent border-accent/30 px-6 py-2 text-sm font-bold shadow-lg shadow-green-500/20">
               Our Solution
             </Badge>
-            <h2 className="text-5xl md:text-6xl font-extrabold mb-6 bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
+            <h2 className="text-5xl md:text-6xl font-extrabold mb-6 bg-linear-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
               The Dual-Verification Framework
             </h2>
             <p className="text-2xl text-gray-600 font-medium max-w-3xl mx-auto">
@@ -211,27 +211,27 @@ export default function AboutPage() {
                 </p>
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-start gap-2">
-                    <Shield className="h-4 w-4 text-accent mt-1 flex-shrink-0" />
+                    <Shield className="h-4 w-4 text-accent mt-1 shrink-0" />
                     <span>
                       Real-time odds verification (like Betstamp, but
                       integrated)
                     </span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <Shield className="h-4 w-4 text-accent mt-1 flex-shrink-0" />
+                    <Shield className="h-4 w-4 text-accent mt-1 shrink-0" />
                     <span>
                       Must demonstrate positive ROI over 500+ verified bets
                     </span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <Shield className="h-4 w-4 text-accent mt-1 flex-shrink-0" />
+                    <Shield className="h-4 w-4 text-accent mt-1 shrink-0" />
                     <span>
                       Must beat Closing Line Value (CLV)—the gold standard for
                       skill
                     </span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <Shield className="h-4 w-4 text-accent mt-1 flex-shrink-0" />
+                    <Shield className="h-4 w-4 text-accent mt-1 shrink-0" />
                     <span>
                       Time-stamped, immutable records prevent all manipulation
                     </span>
@@ -256,26 +256,26 @@ export default function AboutPage() {
                 </p>
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-start gap-2">
-                    <Shield className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
+                    <Shield className="h-4 w-4 text-primary mt-1 shrink-0" />
                     <span>
                       Algorithms tested on years of historical odds and game
                       data
                     </span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <Shield className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
+                    <Shield className="h-4 w-4 text-primary mt-1 shrink-0" />
                     <span>
                       Model methodology disclosed (inputs, approach, backtests)
                     </span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <Shield className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
+                    <Shield className="h-4 w-4 text-primary mt-1 shrink-0" />
                     <span>
                       Full performance history made public (including drawdowns)
                     </span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <Shield className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
+                    <Shield className="h-4 w-4 text-primary mt-1 shrink-0" />
                     <span>
                       Standardized environment ensures fair, honest assessment
                     </span>
@@ -300,7 +300,7 @@ export default function AboutPage() {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-extrabold mb-6 bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
+            <h2 className="text-5xl md:text-6xl font-extrabold mb-6 bg-linear-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
               Our Core Values
             </h2>
             <p className="text-2xl text-gray-600 font-medium">
@@ -363,7 +363,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative py-32 overflow-hidden bg-gradient-to-br from-purple-600 via-purple-700 to-purple-900">
+      <section className="relative py-32 overflow-hidden bg-linear-to-br from-purple-600 via-purple-700 to-purple-900">
         {/* Animated Background Orbs */}
         <div
           className="absolute top-10 left-20 w-80 h-80 hero-orb hero-orb-white"
@@ -395,7 +395,7 @@ export default function AboutPage() {
               <Button
                 size="lg"
                 variant="outline"
-                className="text-xl px-12 py-8 border-3 border-white text-white hover:bg-white/10 font-bold backdrop-blur-sm shadow-xl"
+                className="text-xl px-12 py-8 border-3 border-white text-white hover:bg-white/10 font-bold backdrop-blur-xs shadow-xl"
               >
                 Learn How It Works
               </Button>

@@ -26,7 +26,7 @@ export default function HowItWorksPage() {
   return (
     <main className="min-h-screen pt-16 bg-white">
       {/* Hero Section */}
-      <section className="relative py-32 overflow-hidden bg-gradient-to-br from-purple-50 via-white to-purple-100">
+      <section className="relative py-32 overflow-hidden bg-linear-to-br from-purple-50 via-white to-purple-100">
         {/* Animated Background Orbs */}
         <div
           className="absolute top-20 left-10 w-96 h-96 hero-orb hero-orb-purple"
@@ -49,7 +49,7 @@ export default function HowItWorksPage() {
             </Badge>
             <h1 className="text-6xl md:text-7xl font-extrabold mb-8 leading-tight">
               How{" "}
-              <span className="bg-gradient-to-r from-purple-600 via-purple-700 to-purple-900 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-purple-600 via-purple-700 to-purple-900 bg-clip-text text-transparent">
                 Sprinkle Bets
               </span>{" "}
               Works
@@ -69,7 +69,7 @@ export default function HowItWorksPage() {
             <Badge className="mb-6 glass-purple text-accent border-accent/30 px-6 py-2 text-sm font-bold shadow-lg shadow-green-500/20">
               For Bettors
             </Badge>
-            <h2 className="text-5xl md:text-6xl font-extrabold mb-6 bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
+            <h2 className="text-5xl md:text-6xl font-extrabold mb-6 bg-linear-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
               Start Following Verified Experts in 4 Steps
             </h2>
             <p className="text-2xl text-gray-600 font-medium">
@@ -81,7 +81,7 @@ export default function HowItWorksPage() {
             {/* Step 1 */}
             <Card className="relative glass-card hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-300 border-2 border-purple-200/50">
               <div className="absolute -top-5 left-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-purple-800 text-white rounded-2xl flex items-center justify-center font-bold text-xl shadow-lg shadow-purple-500/30 glow">
+                <div className="w-12 h-12 bg-linear-to-br from-purple-600 to-purple-800 text-white rounded-2xl flex items-center justify-center font-bold text-xl shadow-lg shadow-purple-500/30 glow">
                   1
                 </div>
               </div>
@@ -101,7 +101,7 @@ export default function HowItWorksPage() {
             {/* Step 2 */}
             <Card className="relative glass-card hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-300 border-2 border-purple-200/50">
               <div className="absolute -top-5 left-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-purple-800 text-white rounded-2xl flex items-center justify-center font-bold text-xl shadow-lg shadow-purple-500/30 glow">
+                <div className="w-12 h-12 bg-linear-to-br from-purple-600 to-purple-800 text-white rounded-2xl flex items-center justify-center font-bold text-xl shadow-lg shadow-purple-500/30 glow">
                   2
                 </div>
               </div>
@@ -121,7 +121,7 @@ export default function HowItWorksPage() {
             {/* Step 3 */}
             <Card className="relative glass-card hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-300 border-2 border-purple-200/50">
               <div className="absolute -top-5 left-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-purple-800 text-white rounded-2xl flex items-center justify-center font-bold text-xl shadow-lg shadow-purple-500/30 glow">
+                <div className="w-12 h-12 bg-linear-to-br from-purple-600 to-purple-800 text-white rounded-2xl flex items-center justify-center font-bold text-xl shadow-lg shadow-purple-500/30 glow">
                   3
                 </div>
               </div>
@@ -141,7 +141,7 @@ export default function HowItWorksPage() {
             {/* Step 4 */}
             <Card className="relative glass-card hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-300 border-2 border-purple-200/50">
               <div className="absolute -top-5 left-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-purple-800 text-white rounded-2xl flex items-center justify-center font-bold text-xl shadow-lg shadow-purple-500/30 glow">
+                <div className="w-12 h-12 bg-linear-to-br from-purple-600 to-purple-800 text-white rounded-2xl flex items-center justify-center font-bold text-xl shadow-lg shadow-purple-500/30 glow">
                   4
                 </div>
               </div>
@@ -163,7 +163,7 @@ export default function HowItWorksPage() {
             <Link href="/register">
               <Button
                 size="lg"
-                className="text-xl px-12 py-8 bg-gradient-to-r from-purple-600 to-purple-800 hover:from-purple-700 hover:to-purple-900 glow glow-hover font-bold shadow-2xl shadow-purple-500/30"
+                className="text-xl px-12 py-8 bg-linear-to-r from-purple-600 to-purple-800 hover:from-purple-700 hover:to-purple-900 glow glow-hover font-bold shadow-2xl shadow-purple-500/30"
               >
                 Start Free Trial
                 <ArrowRight className="ml-3 h-6 w-6" />
@@ -174,12 +174,12 @@ export default function HowItWorksPage() {
       </section>
 
       {/* What You Get Section */}
-      <section className="py-24 bg-gradient-to-br from-purple-50 via-white to-purple-50 relative overflow-hidden">
+      <section className="py-24 bg-linear-to-br from-purple-50 via-white to-purple-50 relative overflow-hidden">
         <div className="absolute top-10 right-10 w-64 h-64 hero-orb hero-orb-purple opacity-30"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-20">
-            <h2 className="text-5xl font-extrabold mb-6 bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
+            <h2 className="text-5xl font-extrabold mb-6 bg-linear-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
               What You Get with Every Subscription
             </h2>
           </div>
@@ -234,7 +234,7 @@ export default function HowItWorksPage() {
             <Badge className="mb-6 glass-purple text-primary border-primary/30 px-6 py-2 text-sm font-bold shadow-lg shadow-purple-500/20">
               For Cappers
             </Badge>
-            <h2 className="text-5xl md:text-6xl font-extrabold mb-6 bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
+            <h2 className="text-5xl md:text-6xl font-extrabold mb-6 bg-linear-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
               Monetize Your Skill with Verification
             </h2>
             <p className="text-2xl text-gray-600 font-medium max-w-3xl mx-auto">
@@ -246,7 +246,7 @@ export default function HowItWorksPage() {
           <div className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
             {/* Path 1: Provers */}
             <Card className="glass-card border-2 border-purple-300/60 relative overflow-hidden group hover:shadow-2xl hover:shadow-purple-500/25 transition-all duration-300">
-              <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-purple-400/20 to-transparent rounded-full -mr-20 -mt-20 group-hover:scale-150 transition-transform duration-500"></div>
+              <div className="absolute top-0 right-0 w-40 h-40 bg-linear-to-br from-purple-400/20 to-transparent rounded-full -mr-20 -mt-20 group-hover:scale-150 transition-transform duration-500"></div>
               <CardContent className="pt-10 pb-10 relative">
                 <div className="flex items-center gap-4 mb-6">
                   <div className="p-4 glass-purple rounded-2xl shadow-lg shadow-purple-500/20">
@@ -262,7 +262,7 @@ export default function HowItWorksPage() {
 
                 <div className="space-y-4 mb-6">
                   <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <div className="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center shrink-0 mt-0.5">
                       <CheckCircle2 className="h-4 w-4 text-accent" />
                     </div>
                     <div>
@@ -274,7 +274,7 @@ export default function HowItWorksPage() {
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <div className="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center shrink-0 mt-0.5">
                       <CheckCircle2 className="h-4 w-4 text-accent" />
                     </div>
                     <div>
@@ -286,7 +286,7 @@ export default function HowItWorksPage() {
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <div className="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center shrink-0 mt-0.5">
                       <CheckCircle2 className="h-4 w-4 text-accent" />
                     </div>
                     <div>
@@ -298,7 +298,7 @@ export default function HowItWorksPage() {
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <div className="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center shrink-0 mt-0.5">
                       <CheckCircle2 className="h-4 w-4 text-accent" />
                     </div>
                     <div>
@@ -312,7 +312,7 @@ export default function HowItWorksPage() {
                 </div>
 
                 <Link href="/register?type=capper">
-                  <Button className="w-full bg-gradient-to-r from-purple-600 to-purple-800 hover:from-purple-700 hover:to-purple-900 text-white font-bold text-lg py-6 glow glow-hover shadow-xl shadow-purple-500/30">
+                  <Button className="w-full bg-linear-to-r from-purple-600 to-purple-800 hover:from-purple-700 hover:to-purple-900 text-white font-bold text-lg py-6 glow glow-hover shadow-xl shadow-purple-500/30">
                     Apply as a Prover
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
@@ -322,7 +322,7 @@ export default function HowItWorksPage() {
 
             {/* Path 2: Quants */}
             <Card className="glass-card border-2 border-green-300/60 relative overflow-hidden group hover:shadow-2xl hover:shadow-green-500/25 transition-all duration-300">
-              <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-green-400/20 to-transparent rounded-full -mr-20 -mt-20 group-hover:scale-150 transition-transform duration-500"></div>
+              <div className="absolute top-0 right-0 w-40 h-40 bg-linear-to-br from-green-400/20 to-transparent rounded-full -mr-20 -mt-20 group-hover:scale-150 transition-transform duration-500"></div>
               <CardContent className="pt-10 pb-10 relative">
                 <div className="flex items-center gap-4 mb-6">
                   <div className="p-4 glass-purple rounded-2xl shadow-lg shadow-green-500/20">
@@ -338,7 +338,7 @@ export default function HowItWorksPage() {
 
                 <div className="space-y-4 mb-6">
                   <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center shrink-0 mt-0.5">
                       <CheckCircle2 className="h-4 w-4 text-primary" />
                     </div>
                     <div>
@@ -350,7 +350,7 @@ export default function HowItWorksPage() {
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center shrink-0 mt-0.5">
                       <CheckCircle2 className="h-4 w-4 text-primary" />
                     </div>
                     <div>
@@ -362,7 +362,7 @@ export default function HowItWorksPage() {
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center shrink-0 mt-0.5">
                       <CheckCircle2 className="h-4 w-4 text-primary" />
                     </div>
                     <div>
@@ -374,7 +374,7 @@ export default function HowItWorksPage() {
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center shrink-0 mt-0.5">
                       <CheckCircle2 className="h-4 w-4 text-primary" />
                     </div>
                     <div>
@@ -388,7 +388,7 @@ export default function HowItWorksPage() {
                 </div>
 
                 <Link href="/register?type=capper">
-                  <Button className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold text-lg py-6 shadow-xl shadow-green-500/30">
+                  <Button className="w-full bg-linear-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold text-lg py-6 shadow-xl shadow-green-500/30">
                     Apply as a Quant
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
@@ -401,7 +401,7 @@ export default function HowItWorksPage() {
             <CardContent className="pt-8 pb-8">
               <div className="flex items-start gap-6">
                 <div className="p-4 glass-purple rounded-2xl shadow-lg shadow-purple-500/20">
-                  <FileCheck className="h-10 w-10 text-primary flex-shrink-0" />
+                  <FileCheck className="h-10 w-10 text-primary shrink-0" />
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold mb-4 text-gray-900">
@@ -428,12 +428,12 @@ export default function HowItWorksPage() {
       </section>
 
       {/* FAQ Preview Section */}
-      <section className="py-24 bg-gradient-to-br from-purple-50 via-white to-purple-50 relative overflow-hidden">
+      <section className="py-24 bg-linear-to-br from-purple-50 via-white to-purple-50 relative overflow-hidden">
         <div className="absolute bottom-10 left-10 w-72 h-72 hero-orb hero-orb-purple opacity-30"></div>
 
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-extrabold mb-6 bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
+            <h2 className="text-5xl font-extrabold mb-6 bg-linear-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
               Common Questions
             </h2>
           </div>
@@ -506,7 +506,7 @@ export default function HowItWorksPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative py-32 overflow-hidden bg-gradient-to-br from-purple-600 via-purple-700 to-purple-900">
+      <section className="relative py-32 overflow-hidden bg-linear-to-br from-purple-600 via-purple-700 to-purple-900">
         {/* Animated Background Orbs */}
         <div
           className="absolute top-10 left-20 w-80 h-80 hero-orb hero-orb-white"
@@ -538,7 +538,7 @@ export default function HowItWorksPage() {
               <Button
                 size="lg"
                 variant="outline"
-                className="text-xl px-12 py-8 border-3 border-white text-white hover:bg-white/10 font-bold backdrop-blur-sm shadow-xl"
+                className="text-xl px-12 py-8 border-3 border-white text-white hover:bg-white/10 font-bold backdrop-blur-xs shadow-xl"
               >
                 Browse Cappers
               </Button>

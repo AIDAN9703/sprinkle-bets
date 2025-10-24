@@ -1,6 +1,185 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@plugin 'tailwindcss-animate';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --color-chart-1: hsl(var(--chart-1));
+  --color-chart-2: hsl(var(--chart-2));
+  --color-chart-3: hsl(var(--chart-3));
+  --color-chart-4: hsl(var(--chart-4));
+  --color-chart-5: hsl(var(--chart-5));
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@utility text-gradient {
+  @apply bg-clip-text text-transparent bg-linear-to-r from-primary to-accent;
+}
+
+@utility text-primary-gradient {
+  @apply bg-clip-text text-transparent bg-linear-to-br from-primary via-primary to-purple-600;
+}
+
+@utility glass {
+  /* Liquid Glass Effects */
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+@utility glass-strong {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(30px) saturate(200%);
+  -webkit-backdrop-filter: blur(30px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+@utility glass-purple {
+  background: linear-gradient(
+    135deg,
+    rgba(130, 60, 220, 0.1) 0%,
+    rgba(255, 255, 255, 0.9) 100%
+  );
+  backdrop-filter: blur(25px) saturate(180%);
+  -webkit-backdrop-filter: blur(25px) saturate(180%);
+  border: 1px solid rgba(130, 60, 220, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(130, 60, 220, 0.15);
+}
+
+@utility glass-card {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow:
+    0 8px 32px 0 rgba(0, 0, 0, 0.05),
+    0 0 0 1px rgba(130, 60, 220, 0.1) inset;
+}
+
+@utility glow {
+  box-shadow:
+    0 0 20px rgba(130, 60, 220, 0.4),
+    0 0 40px rgba(130, 60, 220, 0.2);
+}
+
+@utility glow-hover {
+  &:hover {
+    box-shadow:
+      0 0 30px rgba(130, 60, 220, 0.5),
+      0 0 60px rgba(130, 60, 220, 0.3);
+    transition: all 0.3s ease;
+  }
+}
+
+@utility hero-orb {
+  /* Hero Background Orbs */
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.6;
+  animation: float 20s ease-in-out infinite;
+}
+
+@utility hero-orb-purple {
+  background: radial-gradient(
+    circle,
+    rgba(130, 60, 220, 0.4) 0%,
+    rgba(130, 60, 220, 0) 70%
+  );
+}
+
+@utility hero-orb-white {
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.8) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+}
+
+@utility navbar-glass {
+  /* Floating Glass Orb Navbar */
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.12) 0%,
+    rgba(255, 255, 255, 0.06) 50%,
+    rgba(255, 255, 255, 0.03) 100%
+  );
+  backdrop-filter: blur(40px) saturate(180%);
+  -webkit-backdrop-filter: blur(40px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow:
+    0 8px 32px 0 rgba(55, 48, 64, 0.1),
+    0 0 0 1px rgba(255, 255, 255, 0.08) inset,
+    0 1px 0 rgba(255, 255, 255, 0.12) inset;
+
+  /* Enhanced glass effect on hover */
+  &:hover {
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.18) 0%,
+      rgba(255, 255, 255, 0.09) 50%,
+      rgba(255, 255, 255, 0.05) 100%
+    );
+    backdrop-filter: blur(45px) saturate(200%);
+    -webkit-backdrop-filter: blur(45px) saturate(200%);
+    box-shadow:
+      0 12px 40px 0 rgba(130, 60, 220, 0.15),
+      0 0 0 1px rgba(255, 255, 255, 0.12) inset,
+      0 1px 0 rgba(255, 255, 255, 0.18) inset;
+  }
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -69,107 +248,11 @@
 }
 
 @layer utilities {
-  .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
-  }
-  
-  .text-primary-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-br from-primary via-primary to-purple-600;
-  }
-
-  /* Liquid Glass Effects */
-  .glass {
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-  }
-
-  .glass-strong {
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(30px) saturate(200%);
-    -webkit-backdrop-filter: blur(30px) saturate(200%);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-  }
-
-  .glass-purple {
-    background: linear-gradient(135deg, rgba(130, 60, 220, 0.1) 0%, rgba(255, 255, 255, 0.9) 100%);
-    backdrop-filter: blur(25px) saturate(180%);
-    -webkit-backdrop-filter: blur(25px) saturate(180%);
-    border: 1px solid rgba(130, 60, 220, 0.2);
-    box-shadow: 0 8px 32px 0 rgba(130, 60, 220, 0.15);
-  }
-
-  .glass-card {
-    background: rgba(255, 255, 255, 0.75);
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05), 
-                0 0 0 1px rgba(130, 60, 220, 0.1) inset;
-  }
-
-  .glow {
-    box-shadow: 0 0 20px rgba(130, 60, 220, 0.4),
-                0 0 40px rgba(130, 60, 220, 0.2);
-  }
-
-  .glow-hover:hover {
-    box-shadow: 0 0 30px rgba(130, 60, 220, 0.5),
-                0 0 60px rgba(130, 60, 220, 0.3);
-    transition: all 0.3s ease;
-  }
-
-  /* Hero Background Orbs */
-  .hero-orb {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(80px);
-    opacity: 0.6;
-    animation: float 20s ease-in-out infinite;
-  }
 
   @keyframes float {
     0%, 100% { transform: translate(0, 0) scale(1); }
     25% { transform: translate(30px, -30px) scale(1.1); }
     50% { transform: translate(-20px, 20px) scale(0.9); }
     75% { transform: translate(20px, 10px) scale(1.05); }
-  }
-
-  .hero-orb-purple {
-    background: radial-gradient(circle, rgba(130, 60, 220, 0.4) 0%, rgba(130, 60, 220, 0) 70%);
-  }
-
-  .hero-orb-white {
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 70%);
-  }
-
-  /* Floating Glass Orb Navbar */
-  .navbar-glass {
-    background: linear-gradient(135deg, 
-      rgba(255, 255, 255, 0.12) 0%, 
-      rgba(255, 255, 255, 0.06) 50%, 
-      rgba(255, 255, 255, 0.03) 100%);
-    backdrop-filter: blur(40px) saturate(180%);
-    -webkit-backdrop-filter: blur(40px) saturate(180%);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    box-shadow: 
-      0 8px 32px 0 rgba(55, 48, 64, 0.1),
-      0 0 0 1px rgba(255, 255, 255, 0.08) inset,
-      0 1px 0 rgba(255, 255, 255, 0.12) inset;
-  }
-
-  /* Enhanced glass effect on hover */
-  .navbar-glass:hover {
-    background: linear-gradient(135deg, 
-      rgba(255, 255, 255, 0.18) 0%, 
-      rgba(255, 255, 255, 0.09) 50%, 
-      rgba(255, 255, 255, 0.05) 100%);
-    backdrop-filter: blur(45px) saturate(200%);
-    -webkit-backdrop-filter: blur(45px) saturate(200%);
-    box-shadow: 
-      0 12px 40px 0 rgba(130, 60, 220, 0.15),
-      0 0 0 1px rgba(255, 255, 255, 0.12) inset,
-      0 1px 0 rgba(255, 255, 255, 0.18) inset;
   }
 }

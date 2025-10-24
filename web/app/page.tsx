@@ -202,7 +202,7 @@ export default function Home() {
             <div className="p-10 rounded-3xl bg-primary/5 hover:bg-primary/10 transition-all">
               <div className="relative">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="p-3 bg-white rounded-xl shadow-sm">
+                  <div className="p-3 bg-white rounded-xl shadow-xs">
                     <TrendingUp className="h-8 w-8 text-primary" />
                   </div>
                   <h3 className="text-2xl font-bold">The Provers</h3>
@@ -216,25 +216,25 @@ export default function Home() {
                 </p>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
+                    <CheckCircle2 className="h-5 w-5 text-accent mt-0.5 shrink-0" />
                     <span className="text-gray-700">
                       Real-time bet tracking with automated odds verification
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
+                    <CheckCircle2 className="h-5 w-5 text-accent mt-0.5 shrink-0" />
                     <span className="text-gray-700">
                       Must show positive ROI over 500+ verified bets
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
+                    <CheckCircle2 className="h-5 w-5 text-accent mt-0.5 shrink-0" />
                     <span className="text-gray-700">
                       Positive Closing Line Value (CLV) required
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
+                    <CheckCircle2 className="h-5 w-5 text-accent mt-0.5 shrink-0" />
                     <span className="text-gray-700">
                       Immutable, tamper-proof records
                     </span>
@@ -247,7 +247,7 @@ export default function Home() {
             <div className="p-10 rounded-3xl bg-accent/5 hover:bg-accent/10 transition-all">
               <div className="relative">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="p-3 bg-white rounded-xl shadow-sm">
+                  <div className="p-3 bg-white rounded-xl shadow-xs">
                     <BarChart3 className="h-8 w-8 text-accent" />
                   </div>
                   <h3 className="text-2xl font-bold">The Quants</h3>
@@ -261,25 +261,25 @@ export default function Home() {
                 </p>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                    <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 shrink-0" />
                     <span className="text-gray-700">
                       Algorithms backtested on years of historical data
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                    <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 shrink-0" />
                     <span className="text-gray-700">
                       Model methodology transparently disclosed
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                    <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 shrink-0" />
                     <span className="text-gray-700">
                       Full backtest results publicly visible
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                    <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 shrink-0" />
                     <span className="text-gray-700">
                       Zero manipulation, pure math
                     </span>
@@ -305,7 +305,7 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-12">
             <div className="text-center">
-              <div className="inline-flex p-4 bg-white rounded-2xl shadow-sm mb-6">
+              <div className="inline-flex p-4 bg-white rounded-2xl shadow-xs mb-6">
                 <Lock className="h-10 w-10 text-primary" />
               </div>
               <h3 className="text-xl font-bold mb-3">Fraud-Proof System</h3>
@@ -316,7 +316,7 @@ export default function Home() {
             </div>
 
             <div className="text-center">
-              <div className="inline-flex p-4 bg-white rounded-2xl shadow-sm mb-6">
+              <div className="inline-flex p-4 bg-white rounded-2xl shadow-xs mb-6">
                 <LineChart className="h-10 w-10 text-accent" />
               </div>
               <h3 className="text-xl font-bold mb-3">Real Metrics</h3>
@@ -327,7 +327,7 @@ export default function Home() {
             </div>
 
             <div className="text-center">
-              <div className="inline-flex p-4 bg-white rounded-2xl shadow-sm mb-6">
+              <div className="inline-flex p-4 bg-white rounded-2xl shadow-xs mb-6">
                 <Zap className="h-10 w-10 text-primary" />
               </div>
               <h3 className="text-xl font-bold mb-3">Instant Delivery</h3>
@@ -338,7 +338,7 @@ export default function Home() {
             </div>
 
             <div className="text-center">
-              <div className="inline-flex p-4 bg-white rounded-2xl shadow-sm mb-6">
+              <div className="inline-flex p-4 bg-white rounded-2xl shadow-xs mb-6">
                 <Trophy className="h-10 w-10 text-accent" />
               </div>
               <h3 className="text-xl font-bold mb-3">Follow The Sharps</h3>
@@ -348,7 +348,7 @@ export default function Home() {
             </div>
 
             <div className="text-center">
-              <div className="inline-flex p-4 bg-white rounded-2xl shadow-sm mb-6">
+              <div className="inline-flex p-4 bg-white rounded-2xl shadow-xs mb-6">
                 <Target className="h-10 w-10 text-primary" />
               </div>
               <h3 className="text-xl font-bold mb-3">Track Your Bets</h3>
@@ -359,7 +359,7 @@ export default function Home() {
             </div>
 
             <div className="text-center">
-              <div className="inline-flex p-4 bg-white rounded-2xl shadow-sm mb-6">
+              <div className="inline-flex p-4 bg-white rounded-2xl shadow-xs mb-6">
                 <BarChart3 className="h-10 w-10 text-accent" />
               </div>
               <h3 className="text-xl font-bold mb-3">Algo Lab (Coming Soon)</h3>
