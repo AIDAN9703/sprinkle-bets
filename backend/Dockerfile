@@ -29,5 +29,5 @@ COPY . .
 # Expose the application port
 EXPOSE 8000
 
-# Command to run the application - starts FastAPI with hot reload and watcher
-CMD ["sh", "-c", "fastapi dev app/main.py --host 0.0.0.0 --port 8000 --reload & python watcher.py & wait"]
+# Command to run the application
+CMD ["./start.sh"]

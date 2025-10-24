@@ -43,6 +43,7 @@ services:
   frontend:
     build:
       context: ./web
+    user: node
     ports:
       - "3000:3000"
     networks:
@@ -51,6 +52,9 @@ services:
       NODE_ENV: development
       API_BASE_URL: http://backend:8000
       OPENAPI_OUTPUT_FILE: ./shared-data/openapi.json
+      # Enable polling for file changes in Docker
+      WATCHPACK_POLLING: "true"
+      CHOKIDAR_USEPOLLING: "true"
     volumes:
       - ./web:/app
       - nextjs-node-modules:/app/node_modules
