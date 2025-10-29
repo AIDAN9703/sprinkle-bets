@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
+import RevealOnScroll from "@/components/RevealOnScroll";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -27,10 +28,29 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          // set theme before paint to avoid flash
+          dangerouslySetInnerHTML={{
+            __html: `
+(function(){
+  try {
+    var saved = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var isDark = saved ? saved === 'dark' : prefersDark;
+    if (isDark) { document.documentElement.classList.add('dark'); }
+  } catch (e) {}
+})();
+            `,
+          }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        {/* Attach scroll-reveal observer */}
+        <RevealOnScroll />
         <Navigation />
         {children}
         <Footer />

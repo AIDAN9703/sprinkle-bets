@@ -2,6 +2,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
 import {
   UserPlus,
   Search,
@@ -14,6 +15,8 @@ import {
   Target,
   CheckCircle2,
   ArrowRight,
+  Zap,
+  Lock,
 } from "lucide-react";
 
 export const metadata = {
@@ -24,37 +27,37 @@ export const metadata = {
 
 export default function HowItWorksPage() {
   return (
-    <main className="min-h-screen pt-16 bg-white">
+    <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-32 overflow-hidden bg-linear-to-br from-purple-50 via-white to-purple-100">
+      <section className="relative py-32 px-4 overflow-hidden">
         {/* Animated Background Orbs */}
         <div
-          className="absolute top-20 left-10 w-96 h-96 hero-orb hero-orb-purple"
+          className="absolute top-20 left-10 w-96 h-96 hero-orb hero-orb-lime"
           style={{ animationDelay: "0s" }}
         ></div>
         <div
-          className="absolute top-40 right-20 w-80 h-80 hero-orb hero-orb-purple"
+          className="absolute top-40 right-20 w-80 h-80 hero-orb hero-orb-black"
           style={{ animationDelay: "3s" }}
         ></div>
         <div
-          className="absolute bottom-20 left-1/3 w-72 h-72 hero-orb hero-orb-purple"
+          className="absolute bottom-20 left-1/3 w-72 h-72 hero-orb hero-orb-lime"
           style={{ animationDelay: "6s" }}
         ></div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center max-w-3xl mx-auto">
-            <Badge className="mb-6 glass-purple text-primary border-primary/30 px-6 py-2 text-sm font-bold shadow-lg shadow-purple-500/20">
+            <Badge className="mb-6 bg-primary/10 dark:bg-primary/20 text-primary border-primary/30 px-6 py-2 text-sm font-bold">
               <Shield className="h-4 w-4 mr-2" />
               Simple & Transparent
             </Badge>
-            <h1 className="text-6xl md:text-7xl font-extrabold mb-8 leading-tight">
+            <h1 className="text-6xl md:text-7xl font-extrabold mb-8 leading-tight text-foreground">
               How{" "}
-              <span className="bg-linear-to-r from-purple-600 via-purple-700 to-purple-900 bg-clip-text text-transparent">
+              <span className="text-primary">
                 Sprinkle Bets
               </span>{" "}
               Works
             </h1>
-            <p className="text-2xl text-gray-700 font-medium">
+            <p className="text-2xl text-muted-foreground font-medium">
               Finding verified sports betting experts has never been easier.
               Here's your complete guide.
             </p>
@@ -63,96 +66,96 @@ export default function HowItWorksPage() {
       </section>
 
       {/* For Bettors Section */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-24 px-4">
+        <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
-            <Badge className="mb-6 glass-purple text-accent border-accent/30 px-6 py-2 text-sm font-bold shadow-lg shadow-green-500/20">
+            <Badge className="mb-6 bg-accent/20 text-accent border-accent/30 px-6 py-2 text-sm font-bold">
               For Bettors
             </Badge>
-            <h2 className="text-5xl md:text-6xl font-extrabold mb-6 bg-linear-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
+            <h2 className="text-5xl md:text-6xl font-extrabold mb-6 text-foreground">
               Start Following Verified Experts in 4 Steps
             </h2>
-            <p className="text-2xl text-gray-600 font-medium">
+            <p className="text-2xl text-muted-foreground font-medium">
               Get access to proven picks in minutes.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
             {/* Step 1 */}
-            <Card className="relative glass-card hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-300 border-2 border-purple-200/50">
+            <Card className="relative bg-card hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300 border-2 border-primary/20">
               <div className="absolute -top-5 left-6">
-                <div className="w-12 h-12 bg-linear-to-br from-purple-600 to-purple-800 text-white rounded-2xl flex items-center justify-center font-bold text-xl shadow-lg shadow-purple-500/30 glow">
+                <div className="w-12 h-12 bg-primary text-primary-foreground rounded-2xl flex items-center justify-center font-bold text-xl shadow-lg glow-lime">
                   1
                 </div>
               </div>
               <CardContent className="pt-10 pb-8">
-                <div className="inline-flex p-4 glass-purple rounded-2xl mb-6 shadow-lg shadow-purple-500/20">
+                <div className="inline-flex p-4 bg-primary/10 dark:bg-primary/20 rounded-2xl mb-6">
                   <UserPlus className="h-10 w-10 text-primary" />
                 </div>
-                <h3 className="text-2xl font-bold mb-3 text-gray-900">
+                <h3 className="text-2xl font-bold mb-3 text-foreground">
                   Create Account
                 </h3>
-                <p className="text-gray-600 text-base leading-relaxed">
+                <p className="text-muted-foreground text-base leading-relaxed">
                   Sign up free in seconds. No credit card required to browse.
                 </p>
               </CardContent>
             </Card>
 
             {/* Step 2 */}
-            <Card className="relative glass-card hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-300 border-2 border-purple-200/50">
+            <Card className="relative bg-card hover:shadow-2xl hover:shadow-accent/20 transition-all duration-300 border-2 border-accent/20">
               <div className="absolute -top-5 left-6">
-                <div className="w-12 h-12 bg-linear-to-br from-purple-600 to-purple-800 text-white rounded-2xl flex items-center justify-center font-bold text-xl shadow-lg shadow-purple-500/30 glow">
+                <div className="w-12 h-12 bg-accent text-accent-foreground rounded-2xl flex items-center justify-center font-bold text-xl shadow-lg">
                   2
                 </div>
               </div>
               <CardContent className="pt-10 pb-8">
-                <div className="inline-flex p-4 glass-purple rounded-2xl mb-6 shadow-lg shadow-green-500/20">
+                <div className="inline-flex p-4 bg-accent/10 dark:bg-accent/20 rounded-2xl mb-6">
                   <Search className="h-10 w-10 text-accent" />
                 </div>
-                <h3 className="text-2xl font-bold mb-3 text-gray-900">
+                <h3 className="text-2xl font-bold mb-3 text-foreground">
                   Find Your Capper
                 </h3>
-                <p className="text-gray-600 text-base leading-relaxed">
+                <p className="text-muted-foreground text-base leading-relaxed">
                   Browse verified cappers, filter by sport, ROI, or strategy.
                 </p>
               </CardContent>
             </Card>
 
             {/* Step 3 */}
-            <Card className="relative glass-card hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-300 border-2 border-purple-200/50">
+            <Card className="relative bg-card hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300 border-2 border-primary/20">
               <div className="absolute -top-5 left-6">
-                <div className="w-12 h-12 bg-linear-to-br from-purple-600 to-purple-800 text-white rounded-2xl flex items-center justify-center font-bold text-xl shadow-lg shadow-purple-500/30 glow">
+                <div className="w-12 h-12 bg-primary text-primary-foreground rounded-2xl flex items-center justify-center font-bold text-xl shadow-lg glow-lime">
                   3
                 </div>
               </div>
               <CardContent className="pt-10 pb-8">
-                <div className="inline-flex p-4 glass-purple rounded-2xl mb-6 shadow-lg shadow-purple-500/20">
+                <div className="inline-flex p-4 bg-primary/10 dark:bg-primary/20 rounded-2xl mb-6">
                   <CreditCard className="h-10 w-10 text-primary" />
                 </div>
-                <h3 className="text-2xl font-bold mb-3 text-gray-900">
+                <h3 className="text-2xl font-bold mb-3 text-foreground">
                   Subscribe
                 </h3>
-                <p className="text-gray-600 text-base leading-relaxed">
+                <p className="text-muted-foreground text-base leading-relaxed">
                   Choose a plan (weekly, monthly, annual). Cancel anytime.
                 </p>
               </CardContent>
             </Card>
 
             {/* Step 4 */}
-            <Card className="relative glass-card hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-300 border-2 border-purple-200/50">
+            <Card className="relative bg-card hover:shadow-2xl hover:shadow-accent/20 transition-all duration-300 border-2 border-accent/20">
               <div className="absolute -top-5 left-6">
-                <div className="w-12 h-12 bg-linear-to-br from-purple-600 to-purple-800 text-white rounded-2xl flex items-center justify-center font-bold text-xl shadow-lg shadow-purple-500/30 glow">
+                <div className="w-12 h-12 bg-accent text-accent-foreground rounded-2xl flex items-center justify-center font-bold text-xl shadow-lg">
                   4
                 </div>
               </div>
               <CardContent className="pt-10 pb-8">
-                <div className="inline-flex p-4 glass-purple rounded-2xl mb-6 shadow-lg shadow-green-500/20">
+                <div className="inline-flex p-4 bg-accent/10 dark:bg-accent/20 rounded-2xl mb-6">
                   <Bell className="h-10 w-10 text-accent" />
                 </div>
-                <h3 className="text-2xl font-bold mb-3 text-gray-900">
+                <h3 className="text-2xl font-bold mb-3 text-foreground">
                   Get Picks
                 </h3>
-                <p className="text-gray-600 text-base leading-relaxed">
+                <p className="text-muted-foreground text-base leading-relaxed">
                   Instant notifications via app, SMS, Discord, or Telegram.
                 </p>
               </CardContent>
@@ -163,7 +166,7 @@ export default function HowItWorksPage() {
             <Link href="/register">
               <Button
                 size="lg"
-                className="text-xl px-12 py-8 bg-linear-to-r from-purple-600 to-purple-800 hover:from-purple-700 hover:to-purple-900 glow glow-hover font-bold shadow-2xl shadow-purple-500/30"
+                className="text-xl px-12 py-8 btn-lime font-bold"
               >
                 Start Free Trial
                 <ArrowRight className="ml-3 h-6 w-6" />
@@ -173,52 +176,99 @@ export default function HowItWorksPage() {
         </div>
       </section>
 
-      {/* What You Get Section */}
-      <section className="py-24 bg-linear-to-br from-purple-50 via-white to-purple-50 relative overflow-hidden">
-        <div className="absolute top-10 right-10 w-64 h-64 hero-orb hero-orb-purple opacity-30"></div>
+      {/* Image Section - Guy Looking at Phone */}
+      <section className="py-24 px-4 bg-primary/5 dark:bg-primary/10">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <Badge className="mb-4 bg-accent/20 text-accent border-accent/30 px-4 py-2">
+                <Zap className="h-4 w-4 mr-2" />
+                Real-Time Delivery
+              </Badge>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
+                Get Picks <span className="text-primary">Instantly</span>
+              </h2>
+              <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
+                Never miss a winning opportunity. Receive picks the moment they're posted, 
+                directly to your phone or preferred platform.
+              </p>
+              <ul className="space-y-4">
+                <li className="flex items-start gap-3">
+                  <Zap className="h-6 w-6 text-primary mt-0.5 shrink-0" />
+                  <span className="text-muted-foreground text-lg">
+                    Push notifications for time-sensitive bets
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Zap className="h-6 w-6 text-primary mt-0.5 shrink-0" />
+                  <span className="text-muted-foreground text-lg">
+                    Multi-channel delivery (SMS, Discord, Telegram)
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Zap className="h-6 w-6 text-primary mt-0.5 shrink-0" />
+                  <span className="text-muted-foreground text-lg">
+                    Mobile-optimized for betting on the go
+                  </span>
+                </li>
+              </ul>
+            </div>
+            <div className="relative h-[400px] md:h-[500px] rounded-3xl overflow-hidden">
+              <Image
+                src="/images/guy-looking-at-phone.png"
+                alt="Getting picks on mobile"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      {/* What You Get Section */}
+      <section className="py-24 px-4">
+        <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
-            <h2 className="text-5xl font-extrabold mb-6 bg-linear-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
+            <h2 className="text-5xl font-extrabold mb-6 text-foreground">
               What You Get with Every Subscription
             </h2>
           </div>
 
           <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
             <div className="text-center group">
-              <div className="inline-flex p-6 glass-purple rounded-3xl mb-6 shadow-xl shadow-purple-500/20 group-hover:shadow-2xl group-hover:shadow-purple-500/30 transition-all duration-300 glow-hover">
+              <div className="inline-flex p-6 bg-primary/10 dark:bg-primary/20 rounded-3xl mb-6 transition-all duration-300 hover:scale-110 hover:shadow-xl hover:shadow-primary/20">
                 <Shield className="h-14 w-14 text-primary" />
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-900">
+              <h3 className="text-2xl font-bold mb-4 text-foreground">
                 Verified Performance
               </h3>
-              <p className="text-gray-600 text-lg leading-relaxed">
+              <p className="text-muted-foreground text-lg leading-relaxed">
                 Every pick comes from a capper with a proven, fraud-proof track
                 record.
               </p>
             </div>
 
             <div className="text-center group">
-              <div className="inline-flex p-6 glass-purple rounded-3xl mb-6 shadow-xl shadow-green-500/20 group-hover:shadow-2xl group-hover:shadow-green-500/30 transition-all duration-300 glow-hover">
+              <div className="inline-flex p-6 bg-accent/10 dark:bg-accent/20 rounded-3xl mb-6 transition-all duration-300 hover:scale-110 hover:shadow-xl hover:shadow-accent/20">
                 <Target className="h-14 w-14 text-accent" />
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-900">
+              <h3 className="text-2xl font-bold mb-4 text-foreground">
                 Real-Time Delivery
               </h3>
-              <p className="text-gray-600 text-lg leading-relaxed">
+              <p className="text-muted-foreground text-lg leading-relaxed">
                 Get picks instantly—before lines move—via your preferred
                 channel.
               </p>
             </div>
 
             <div className="text-center group">
-              <div className="inline-flex p-6 glass-purple rounded-3xl mb-6 shadow-xl shadow-purple-500/20 group-hover:shadow-2xl group-hover:shadow-purple-500/30 transition-all duration-300 glow-hover">
+              <div className="inline-flex p-6 bg-primary/10 dark:bg-primary/20 rounded-3xl mb-6 transition-all duration-300 hover:scale-110 hover:shadow-xl hover:shadow-primary/20">
                 <BarChart3 className="h-14 w-14 text-primary" />
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-900">
+              <h3 className="text-2xl font-bold mb-4 text-foreground">
                 Full Transparency
               </h3>
-              <p className="text-gray-600 text-lg leading-relaxed">
+              <p className="text-muted-foreground text-lg leading-relaxed">
                 See complete performance history, including ROI, CLV, and all
                 past picks.
               </p>
@@ -228,16 +278,16 @@ export default function HowItWorksPage() {
       </section>
 
       {/* For Cappers Section */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-24 px-4 bg-card/50">
+        <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
-            <Badge className="mb-6 glass-purple text-primary border-primary/30 px-6 py-2 text-sm font-bold shadow-lg shadow-purple-500/20">
+            <Badge className="mb-6 bg-primary/10 dark:bg-primary/20 text-primary border-primary/30 px-6 py-2 text-sm font-bold">
               For Cappers
             </Badge>
-            <h2 className="text-5xl md:text-6xl font-extrabold mb-6 bg-linear-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
+            <h2 className="text-5xl md:text-6xl font-extrabold mb-6 text-foreground">
               Monetize Your Skill with Verification
             </h2>
-            <p className="text-2xl text-gray-600 font-medium max-w-3xl mx-auto">
+            <p className="text-2xl text-muted-foreground font-medium max-w-3xl mx-auto">
               If you can prove your edge, you can earn on our platform. Here's
               how to get verified.
             </p>
@@ -245,18 +295,18 @@ export default function HowItWorksPage() {
 
           <div className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
             {/* Path 1: Provers */}
-            <Card className="glass-card border-2 border-purple-300/60 relative overflow-hidden group hover:shadow-2xl hover:shadow-purple-500/25 transition-all duration-300">
-              <div className="absolute top-0 right-0 w-40 h-40 bg-linear-to-br from-purple-400/20 to-transparent rounded-full -mr-20 -mt-20 group-hover:scale-150 transition-transform duration-500"></div>
+            <Card className="bg-card border-2 border-primary/20 relative overflow-hidden group hover:shadow-2xl hover:shadow-primary/25 transition-all duration-300">
+              <div className="absolute top-0 right-0 w-40 h-40 bg-primary/10 rounded-full -mr-20 -mt-20 group-hover:scale-150 transition-transform duration-500"></div>
               <CardContent className="pt-10 pb-10 relative">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="p-4 glass-purple rounded-2xl shadow-lg shadow-purple-500/20">
+                  <div className="p-4 bg-primary/10 dark:bg-primary/20 rounded-2xl">
                     <TrendingUp className="h-10 w-10 text-primary" />
                   </div>
-                  <h3 className="text-3xl font-bold text-gray-900">
+                  <h3 className="text-3xl font-bold text-foreground">
                     Path 1: Become a Prover
                   </h3>
                 </div>
-                <p className="text-gray-600 text-lg mb-8">
+                <p className="text-muted-foreground text-lg mb-8">
                   For handicappers with a real track record.
                 </p>
 
@@ -266,7 +316,7 @@ export default function HowItWorksPage() {
                       <CheckCircle2 className="h-4 w-4 text-accent" />
                     </div>
                     <div>
-                      <p className="font-semibold">Apply & Connect</p>
+                      <p className="font-semibold text-foreground">Apply & Connect</p>
                       <p className="text-sm text-muted-foreground">
                         Submit your application and link your sportsbook account
                         (optional) or use our manual pick logger.
@@ -278,7 +328,7 @@ export default function HowItWorksPage() {
                       <CheckCircle2 className="h-4 w-4 text-accent" />
                     </div>
                     <div>
-                      <p className="font-semibold">Build Your Record</p>
+                      <p className="font-semibold text-foreground">Build Your Record</p>
                       <p className="text-sm text-muted-foreground">
                         Log picks with real-time odds verification. We track
                         everything automatically.
@@ -290,7 +340,7 @@ export default function HowItWorksPage() {
                       <CheckCircle2 className="h-4 w-4 text-accent" />
                     </div>
                     <div>
-                      <p className="font-semibold">Meet the Standard</p>
+                      <p className="font-semibold text-foreground">Meet the Standard</p>
                       <p className="text-sm text-muted-foreground">
                         Show positive ROI and positive CLV over 500+ verified
                         bets.
@@ -302,7 +352,7 @@ export default function HowItWorksPage() {
                       <CheckCircle2 className="h-4 w-4 text-accent" />
                     </div>
                     <div>
-                      <p className="font-semibold">Get Verified & Earn</p>
+                      <p className="font-semibold text-foreground">Get Verified & Earn</p>
                       <p className="text-sm text-muted-foreground">
                         Once verified, set your subscription prices and start
                         building your following.
@@ -312,7 +362,7 @@ export default function HowItWorksPage() {
                 </div>
 
                 <Link href="/register?type=capper">
-                  <Button className="w-full bg-linear-to-r from-purple-600 to-purple-800 hover:from-purple-700 hover:to-purple-900 text-white font-bold text-lg py-6 glow glow-hover shadow-xl shadow-purple-500/30">
+                  <Button className="w-full btn-lime text-white font-bold text-lg py-6">
                     Apply as a Prover
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
@@ -321,18 +371,18 @@ export default function HowItWorksPage() {
             </Card>
 
             {/* Path 2: Quants */}
-            <Card className="glass-card border-2 border-green-300/60 relative overflow-hidden group hover:shadow-2xl hover:shadow-green-500/25 transition-all duration-300">
-              <div className="absolute top-0 right-0 w-40 h-40 bg-linear-to-br from-green-400/20 to-transparent rounded-full -mr-20 -mt-20 group-hover:scale-150 transition-transform duration-500"></div>
+            <Card className="bg-card border-2 border-accent/20 relative overflow-hidden group hover:shadow-2xl hover:shadow-accent/25 transition-all duration-300">
+              <div className="absolute top-0 right-0 w-40 h-40 bg-accent/10 rounded-full -mr-20 -mt-20 group-hover:scale-150 transition-transform duration-500"></div>
               <CardContent className="pt-10 pb-10 relative">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="p-4 glass-purple rounded-2xl shadow-lg shadow-green-500/20">
+                  <div className="p-4 bg-accent/10 dark:bg-accent/20 rounded-2xl">
                     <BarChart3 className="h-10 w-10 text-accent" />
                   </div>
-                  <h3 className="text-3xl font-bold text-gray-900">
+                  <h3 className="text-3xl font-bold text-foreground">
                     Path 2: Become a Quant
                   </h3>
                 </div>
-                <p className="text-gray-600 text-lg mb-8">
+                <p className="text-muted-foreground text-lg mb-8">
                   For algorithm builders with backtested models.
                 </p>
 
@@ -342,7 +392,7 @@ export default function HowItWorksPage() {
                       <CheckCircle2 className="h-4 w-4 text-primary" />
                     </div>
                     <div>
-                      <p className="font-semibold">Submit Your Model</p>
+                      <p className="font-semibold text-foreground">Submit Your Model</p>
                       <p className="text-sm text-muted-foreground">
                         Upload your algorithm code or logic to our secure
                         backtesting environment.
@@ -354,7 +404,7 @@ export default function HowItWorksPage() {
                       <CheckCircle2 className="h-4 w-4 text-primary" />
                     </div>
                     <div>
-                      <p className="font-semibold">Disclose Methodology</p>
+                      <p className="font-semibold text-foreground">Disclose Methodology</p>
                       <p className="text-sm text-muted-foreground">
                         Share your model's inputs and approach (proprietary
                         weighting stays private).
@@ -366,7 +416,7 @@ export default function HowItWorksPage() {
                       <CheckCircle2 className="h-4 w-4 text-primary" />
                     </div>
                     <div>
-                      <p className="font-semibold">Pass Our Backtest</p>
+                      <p className="font-semibold text-foreground">Pass Our Backtest</p>
                       <p className="text-sm text-muted-foreground">
                         We test your algorithm against years of historical odds
                         data.
@@ -378,7 +428,7 @@ export default function HowItWorksPage() {
                       <CheckCircle2 className="h-4 w-4 text-primary" />
                     </div>
                     <div>
-                      <p className="font-semibold">Launch & Monetize</p>
+                      <p className="font-semibold text-foreground">Launch & Monetize</p>
                       <p className="text-sm text-muted-foreground">
                         Full backtest results go public. Your model generates
                         picks automatically.
@@ -388,7 +438,7 @@ export default function HowItWorksPage() {
                 </div>
 
                 <Link href="/register?type=capper">
-                  <Button className="w-full bg-linear-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold text-lg py-6 shadow-xl shadow-green-500/30">
+                  <Button className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-lg py-6">
                     Apply as a Quant
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
@@ -397,25 +447,25 @@ export default function HowItWorksPage() {
             </Card>
           </div>
 
-          <Card className="glass-card max-w-4xl mx-auto mt-16 border-2 border-purple-200/50 shadow-xl shadow-purple-500/10">
+          <Card className="bg-card max-w-4xl mx-auto mt-16 border-2 border-primary/20">
             <CardContent className="pt-8 pb-8">
               <div className="flex items-start gap-6">
-                <div className="p-4 glass-purple rounded-2xl shadow-lg shadow-purple-500/20">
+                <div className="p-4 bg-primary/10 dark:bg-primary/20 rounded-2xl">
                   <FileCheck className="h-10 w-10 text-primary shrink-0" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold mb-4 text-gray-900">
+                  <h3 className="text-2xl font-bold mb-4 text-foreground">
                     What Cappers Earn
                   </h3>
-                  <p className="text-gray-600 text-lg mb-4 leading-relaxed">
+                  <p className="text-muted-foreground text-lg mb-4 leading-relaxed">
                     You set your own subscription prices (weekly, monthly,
                     annual tiers). Sprinkle Bets takes a 15-20% platform fee.
                     The rest is yours.
                   </p>
-                  <p className="text-base text-gray-600 leading-relaxed">
-                    <span className="font-bold text-gray-900">Example:</span> If
+                  <p className="text-base text-muted-foreground leading-relaxed">
+                    <span className="font-bold text-foreground">Example:</span> If
                     you charge $99/month and have 100 subscribers, you earn{" "}
-                    <span className="font-bold text-green-600 text-xl">
+                    <span className="font-bold text-accent text-xl">
                       $7,920/month
                     </span>{" "}
                     after platform fees.
@@ -428,25 +478,23 @@ export default function HowItWorksPage() {
       </section>
 
       {/* FAQ Preview Section */}
-      <section className="py-24 bg-linear-to-br from-purple-50 via-white to-purple-50 relative overflow-hidden">
-        <div className="absolute bottom-10 left-10 w-72 h-72 hero-orb hero-orb-purple opacity-30"></div>
-
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <section className="py-24 px-4">
+        <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-extrabold mb-6 bg-linear-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
+            <h2 className="text-5xl font-extrabold mb-6 text-foreground">
               Common Questions
             </h2>
           </div>
 
           <div className="space-y-6">
-            <Card className="glass-card border-2 border-purple-200/40 hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-300">
+            <Card className="bg-card border-2 border-border hover:shadow-xl hover:shadow-primary/10 transition-all duration-300">
               <CardContent className="pt-8 pb-8">
-                <h3 className="font-bold text-2xl mb-4 text-gray-900">
+                <h3 className="font-bold text-2xl mb-4 text-foreground">
                   What makes Sprinkle Bets different from Dub Club or Winible?
                 </h3>
-                <p className="text-gray-600 text-lg leading-relaxed">
+                <p className="text-muted-foreground text-lg leading-relaxed">
                   We're the only platform with{" "}
-                  <span className="font-bold text-purple-600">
+                  <span className="font-bold text-primary">
                     mandatory verification
                   </span>
                   . Dub Club and Winible let anyone sell picks. We require proof
@@ -456,12 +504,12 @@ export default function HowItWorksPage() {
               </CardContent>
             </Card>
 
-            <Card className="glass-card border-2 border-purple-200/40 hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-300">
+            <Card className="bg-card border-2 border-border hover:shadow-xl hover:shadow-primary/10 transition-all duration-300">
               <CardContent className="pt-8 pb-8">
-                <h3 className="font-bold text-2xl mb-4 text-gray-900">
+                <h3 className="font-bold text-2xl mb-4 text-foreground">
                   What is Closing Line Value (CLV) and why does it matter?
                 </h3>
-                <p className="text-gray-600 text-lg leading-relaxed">
+                <p className="text-muted-foreground text-lg leading-relaxed">
                   CLV measures whether you're getting better odds than the
                   "closing line"—the final odds before a game starts.
                   Consistently beating the closing line is the strongest
@@ -471,12 +519,12 @@ export default function HowItWorksPage() {
               </CardContent>
             </Card>
 
-            <Card className="glass-card border-2 border-purple-200/40 hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-300">
+            <Card className="bg-card border-2 border-border hover:shadow-xl hover:shadow-primary/10 transition-all duration-300">
               <CardContent className="pt-8 pb-8">
-                <h3 className="font-bold text-2xl mb-4 text-gray-900">
+                <h3 className="font-bold text-2xl mb-4 text-foreground">
                   Can cappers fake their records?
                 </h3>
-                <p className="text-gray-600 text-lg leading-relaxed">
+                <p className="text-muted-foreground text-lg leading-relaxed">
                   No. Every pick is time-stamped and locked into our database
                   with verified odds from real sportsbooks. Picks can't be
                   edited or deleted after submission. It's mathematically
@@ -485,16 +533,16 @@ export default function HowItWorksPage() {
               </CardContent>
             </Card>
 
-            <Card className="glass-card border-2 border-purple-200/40 hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-300">
+            <Card className="bg-card border-2 border-border hover:shadow-xl hover:shadow-primary/10 transition-all duration-300">
               <CardContent className="pt-8 pb-8">
-                <h3 className="font-bold text-2xl mb-4 text-gray-900">
+                <h3 className="font-bold text-2xl mb-4 text-foreground">
                   Do I need to share my full algorithm if I'm a Quant?
                 </h3>
-                <p className="text-gray-600 text-lg leading-relaxed">
+                <p className="text-muted-foreground text-lg leading-relaxed">
                   No. You disclose your model's{" "}
-                  <span className="font-bold text-purple-600">inputs</span>{" "}
+                  <span className="font-bold text-primary">inputs</span>{" "}
                   (e.g., "team efficiency, weather data") and{" "}
-                  <span className="font-bold text-purple-600">methodology</span>{" "}
+                  <span className="font-bold text-primary">methodology</span>{" "}
                   (e.g., "logistic regression"), but your proprietary weighting
                   and specific code stay private. Transparency without giving
                   away your edge.
@@ -506,22 +554,22 @@ export default function HowItWorksPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative py-32 overflow-hidden bg-linear-to-br from-purple-600 via-purple-700 to-purple-900">
+      <section className="relative py-32 px-4 overflow-hidden bg-primary/5 dark:bg-primary/10">
         {/* Animated Background Orbs */}
         <div
-          className="absolute top-10 left-20 w-80 h-80 hero-orb hero-orb-white"
+          className="absolute top-10 left-20 w-80 h-80 hero-orb hero-orb-lime"
           style={{ animationDelay: "1s" }}
         ></div>
         <div
-          className="absolute bottom-20 right-20 w-96 h-96 hero-orb hero-orb-white"
+          className="absolute bottom-20 right-20 w-96 h-96 hero-orb hero-orb-black"
           style={{ animationDelay: "4s" }}
         ></div>
 
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <h2 className="text-5xl md:text-6xl font-extrabold mb-8 text-white leading-tight">
+        <div className="max-w-5xl mx-auto text-center relative z-10">
+          <h2 className="text-5xl md:text-6xl font-extrabold mb-8 text-foreground leading-tight">
             Ready to Get Started?
           </h2>
-          <p className="text-2xl text-purple-100 mb-12 font-medium">
+          <p className="text-2xl text-muted-foreground mb-12 font-medium">
             Join thousands of bettors and cappers who trust verification over
             hype.
           </p>
@@ -529,16 +577,17 @@ export default function HowItWorksPage() {
             <Link href="/register">
               <Button
                 size="lg"
-                className="text-xl px-12 py-8 bg-white text-purple-700 hover:bg-purple-50 font-bold shadow-2xl shadow-black/20 hover:shadow-black/30 transition-all duration-300"
+                className="text-xl px-12 py-8 btn-lime font-bold"
               >
                 Sign Up Free
+                <ArrowRight className="ml-2 h-6 w-6" />
               </Button>
             </Link>
             <Link href="/marketplace">
               <Button
                 size="lg"
                 variant="outline"
-                className="text-xl px-12 py-8 border-3 border-white text-white hover:bg-white/10 font-bold backdrop-blur-xs shadow-xl"
+                className="text-xl px-12 py-8 font-bold"
               >
                 Browse Cappers
               </Button>

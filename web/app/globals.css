@@ -1,42 +1,41 @@
+/* ============================================
+   TAILWIND CSS V4 IMPORTS & PLUGINS
+   ============================================ */
 @import 'tailwindcss';
-
 @plugin 'tailwindcss-animate';
 
+/* Custom dark mode variant */
 @custom-variant dark (&:is(.dark *));
 
+/* ============================================
+   THEME CONFIGURATION
+   ============================================ */
 @theme {
+  /* Border Radius */
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
 
+  /* Color Mappings */
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
-
   --color-card: hsl(var(--card));
   --color-card-foreground: hsl(var(--card-foreground));
-
   --color-popover: hsl(var(--popover));
   --color-popover-foreground: hsl(var(--popover-foreground));
-
   --color-primary: hsl(var(--primary));
   --color-primary-foreground: hsl(var(--primary-foreground));
-
   --color-secondary: hsl(var(--secondary));
   --color-secondary-foreground: hsl(var(--secondary-foreground));
-
   --color-muted: hsl(var(--muted));
   --color-muted-foreground: hsl(var(--muted-foreground));
-
   --color-accent: hsl(var(--accent));
   --color-accent-foreground: hsl(var(--accent-foreground));
-
   --color-destructive: hsl(var(--destructive));
   --color-destructive-foreground: hsl(var(--destructive-foreground));
-
   --color-border: hsl(var(--border));
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));
-
   --color-chart-1: hsl(var(--chart-1));
   --color-chart-2: hsl(var(--chart-2));
   --color-chart-3: hsl(var(--chart-3));
@@ -44,14 +43,9 @@
   --color-chart-5: hsl(var(--chart-5));
 }
 
-/*
-  The default border color has changed to `currentcolor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
+/* ============================================
+   TAILWIND V4 COMPATIBILITY
+   ============================================ */
 @layer base {
   *,
   ::after,
@@ -62,16 +56,125 @@
   }
 }
 
+/* ============================================
+   SPRINKLE BETS BRAND COLORS
+   ============================================ */
+@layer base {
+  :root {
+    /* Brand Colors - Sprinkle Bets #D6FF3F Lime Green & Black */
+    --brand-lime: 73 100% 62%;           /* #D6FF3F - Your actual brand lime */
+    --brand-black: 0 0% 8%;              /* #141414 - Deep black */
+    --brand-lime-light: 73 100% 72%;     /* Lighter lime */
+    --brand-lime-dark: 73 100% 50%;      /* Darker lime */
+    
+    /* Light Mode Colors */
+    --background: 0 0% 100%;             /* White */
+    --foreground: 0 0% 8%;               /* Near black */
+    
+    --card: 0 0% 100%;                   /* White */
+    --card-foreground: 0 0% 8%;          /* Near black */
+    
+    --popover: 0 0% 100%;                /* White */
+    --popover-foreground: 0 0% 8%;       /* Near black */
+    
+    --primary: 73 100% 62%;              /* #D6FF3F Lime green */
+    --primary-foreground: 0 0% 8%;       /* Black text on lime */
+    
+    --secondary: 0 0% 96%;               /* Light gray */
+    --secondary-foreground: 0 0% 8%;     /* Near black */
+    
+    --muted: 0 0% 96%;                   /* Light gray */
+    --muted-foreground: 0 0% 45%;        /* Medium gray */
+    
+    --accent: 73 100% 62%;               /* #D6FF3F Lime green */
+    --accent-foreground: 0 0% 8%;        /* Black text */
+    
+    --destructive: 0 84% 60%;            /* Red for errors */
+    --destructive-foreground: 0 0% 98%;  /* White text */
+    
+    --border: 0 0% 90%;                  /* Light border */
+    --input: 0 0% 90%;                   /* Light input border */
+    --ring: 73 100% 62%;                 /* #D6FF3F Lime focus ring */
+    
+    /* Chart Colors */
+    --chart-1: 73 100% 62%;              /* #D6FF3F Lime */
+    --chart-2: 0 0% 8%;                  /* Black */
+    --chart-3: 73 100% 45%;              /* Dark lime */
+    --chart-4: 0 0% 60%;                 /* Gray */
+    --chart-5: 73 100% 75%;              /* Light lime */
+    
+    /* Border Radius */
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* Dark Mode Colors */
+    --background: 0 0% 8%;               /* Deep black */
+    --foreground: 0 0% 98%;              /* Near white */
+    
+    --card: 0 0% 12%;                    /* Slightly lighter black */
+    --card-foreground: 0 0% 98%;         /* Near white */
+    
+    --popover: 0 0% 10%;                 /* Dark gray */
+    --popover-foreground: 0 0% 98%;      /* Near white */
+    
+    --primary: 73 100% 62%;              /* #D6FF3F Lime green */
+    --primary-foreground: 0 0% 8%;       /* Black text on lime */
+    
+    --secondary: 0 0% 15%;               /* Dark gray */
+    --secondary-foreground: 0 0% 98%;    /* Near white */
+    
+    --muted: 0 0% 15%;                   /* Dark gray */
+    --muted-foreground: 0 0% 65%;        /* Light gray */
+    
+    --accent: 73 100% 62%;               /* #D6FF3F Lime green */
+    --accent-foreground: 0 0% 8%;        /* Black text */
+    
+    --destructive: 0 84% 60%;            /* Red for errors */
+    --destructive-foreground: 0 0% 98%;  /* White text */
+    
+    --border: 0 0% 20%;                  /* Dark border */
+    --input: 0 0% 20%;                   /* Dark input border */
+    --ring: 73 100% 62%;                 /* #D6FF3F Lime focus ring */
+    
+    /* Chart Colors - Dark Mode */
+    --chart-1: 73 100% 62%;              /* #D6FF3F Lime */
+    --chart-2: 0 0% 90%;                 /* Light gray */
+    --chart-3: 73 100% 45%;              /* Dark lime */
+    --chart-4: 0 0% 40%;                 /* Medium gray */
+    --chart-5: 73 100% 75%;              /* Light lime */
+  }
+}
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+}
+
+/* ============================================
+   CUSTOM UTILITY CLASSES
+   ============================================ */
+
+/* Text Gradients */
 @utility text-gradient {
   @apply bg-clip-text text-transparent bg-linear-to-r from-primary to-accent;
 }
 
-@utility text-primary-gradient {
-  @apply bg-clip-text text-transparent bg-linear-to-br from-primary via-primary to-purple-600;
+@utility text-brand-gradient {
+  background: linear-gradient(135deg, #D6FF3F 0%, #A8CC32 100%);
+  @apply bg-clip-text text-transparent;
 }
 
+/* Glass Morphism Effects */
 @utility glass {
-  /* Liquid Glass Effects */
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
@@ -85,16 +188,23 @@
   border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
-@utility glass-purple {
+@utility glass-dark {
+  background: rgba(20, 20, 20, 0.7);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(214, 255, 63, 0.2);
+}
+
+@utility glass-lime {
   background: linear-gradient(
     135deg,
-    rgba(130, 60, 220, 0.1) 0%,
+    rgba(214, 255, 63, 0.15) 0%,
     rgba(255, 255, 255, 0.9) 100%
   );
   backdrop-filter: blur(25px) saturate(180%);
   -webkit-backdrop-filter: blur(25px) saturate(180%);
-  border: 1px solid rgba(130, 60, 220, 0.2);
-  box-shadow: 0 8px 32px 0 rgba(130, 60, 220, 0.15);
+  border: 1px solid rgba(214, 255, 63, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(214, 255, 63, 0.15);
 }
 
 @utility glass-card {
@@ -104,26 +214,33 @@
   border: 1px solid rgba(255, 255, 255, 0.4);
   box-shadow:
     0 8px 32px 0 rgba(0, 0, 0, 0.05),
-    0 0 0 1px rgba(130, 60, 220, 0.1) inset;
+    0 0 0 1px rgba(214, 255, 63, 0.1) inset;
 }
 
-@utility glow {
+/* Glow Effects */
+@utility glow-lime {
   box-shadow:
-    0 0 20px rgba(130, 60, 220, 0.4),
-    0 0 40px rgba(130, 60, 220, 0.2);
+    0 0 20px rgba(214, 255, 63, 0.4),
+    0 0 40px rgba(214, 255, 63, 0.2);
 }
 
-@utility glow-hover {
+@utility glow-lime-hover {
   &:hover {
     box-shadow:
-      0 0 30px rgba(130, 60, 220, 0.5),
-      0 0 60px rgba(130, 60, 220, 0.3);
+      0 0 30px rgba(214, 255, 63, 0.6),
+      0 0 60px rgba(214, 255, 63, 0.3);
     transition: all 0.3s ease;
   }
 }
 
+@utility glow-black {
+  box-shadow:
+    0 0 20px rgba(20, 20, 20, 0.4),
+    0 0 40px rgba(20, 20, 20, 0.2);
+}
+
+/* Hero Background Orbs */
 @utility hero-orb {
-  /* Hero Background Orbs */
   position: absolute;
   border-radius: 50%;
   filter: blur(80px);
@@ -131,11 +248,19 @@
   animation: float 20s ease-in-out infinite;
 }
 
-@utility hero-orb-purple {
+@utility hero-orb-lime {
   background: radial-gradient(
     circle,
-    rgba(130, 60, 220, 0.4) 0%,
-    rgba(130, 60, 220, 0) 70%
+    rgba(214, 255, 63, 0.4) 0%,
+    rgba(214, 255, 63, 0) 70%
+  );
+}
+
+@utility hero-orb-black {
+  background: radial-gradient(
+    circle,
+    rgba(20, 20, 20, 0.8) 0%,
+    rgba(20, 20, 20, 0) 70%
   );
 }
 
@@ -147,8 +272,8 @@
   );
 }
 
+/* Navbar Glass Effect */
 @utility navbar-glass {
-  /* Floating Glass Orb Navbar */
   background: linear-gradient(
     135deg,
     rgba(255, 255, 255, 0.12) 0%,
@@ -159,100 +284,270 @@
   -webkit-backdrop-filter: blur(40px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow:
-    0 8px 32px 0 rgba(55, 48, 64, 0.1),
+    0 8px 32px 0 rgba(20, 20, 20, 0.1),
     0 0 0 1px rgba(255, 255, 255, 0.08) inset,
     0 1px 0 rgba(255, 255, 255, 0.12) inset;
+}
 
-  /* Enhanced glass effect on hover */
+@utility navbar-glass-dark {
+  background: linear-gradient(
+    135deg,
+    rgba(20, 20, 20, 0.95) 0%,
+    rgba(20, 20, 20, 0.85) 50%,
+    rgba(20, 20, 20, 0.8) 100%
+  );
+  backdrop-filter: blur(40px) saturate(180%);
+  -webkit-backdrop-filter: blur(40px) saturate(180%);
+  border: 1px solid rgba(214, 255, 63, 0.15);
+  box-shadow:
+    0 8px 32px 0 rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(214, 255, 63, 0.08) inset;
+}
+
+/* Button Styles */
+@utility btn-lime {
+  @apply bg-primary text-primary-foreground hover:opacity-90 transition-all duration-200;
+  box-shadow: 0 4px 14px 0 rgba(214, 255, 63, 0.4);
+  
   &:hover {
-    background: linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.18) 0%,
-      rgba(255, 255, 255, 0.09) 50%,
-      rgba(255, 255, 255, 0.05) 100%
-    );
-    backdrop-filter: blur(45px) saturate(200%);
-    -webkit-backdrop-filter: blur(45px) saturate(200%);
-    box-shadow:
-      0 12px 40px 0 rgba(130, 60, 220, 0.15),
-      0 0 0 1px rgba(255, 255, 255, 0.12) inset,
-      0 1px 0 rgba(255, 255, 255, 0.18) inset;
+    box-shadow: 0 6px 20px 0 rgba(214, 255, 63, 0.6);
+    transform: translateY(-2px);
   }
 }
 
-@layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 10%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 10%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 10%;
-    --primary: 262 80% 50%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 10%;
-    --muted: 0 0% 98%;
-    --muted-foreground: 0 0% 45%;
-    --accent: 142 70% 45%;
-    --accent-foreground: 0 0% 100%;
-    --destructive: 0 70% 50%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 0 0% 94%;
-    --input: 0 0% 94%;
-    --ring: 262 80% 50%;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-    --radius: 0.75rem;
-  }
-
-  .dark {
-    --background: 0 0% 10%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 10%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 10%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 262 80% 60%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 0 0% 15%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 60%;
-    --accent: 142 70% 45%;
-    --accent-foreground: 0 0% 100%;
-    --destructive: 0 70% 50%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 262 80% 60%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+@utility btn-black {
+  @apply bg-[#141414] text-white hover:bg-[#1f1f1f] transition-all duration-200;
+  box-shadow: 0 4px 14px 0 rgba(20, 20, 20, 0.4);
+  
+  &:hover {
+    box-shadow: 0 6px 20px 0 rgba(20, 20, 20, 0.6);
+    transform: translateY(-2px);
   }
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-
-  body {
-    @apply bg-background text-foreground;
-  }
-}
-
+/* ============================================
+   ANIMATIONS
+   ============================================ */
 @layer utilities {
+  /* Standardized landing utilities */
+  .section {
+    @apply py-16 sm:py-20 lg:py-24 px-4;
+  }
 
+  .section-container {
+    @apply max-w-6xl mx-auto;
+  }
+
+  .heading {
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-foreground;
+  }
+
+  .subheading {
+    @apply text-lg sm:text-xl text-muted-foreground;
+  }
+
+  .cta-primary {
+    @apply text-base sm:text-lg px-6 sm:px-10 py-5 sm:py-7 btn-lime font-bold;
+  }
+
+  .cta-secondary {
+    @apply text-base sm:text-lg px-6 sm:px-10 py-5 sm:py-7 font-bold;
+  }
   @keyframes float {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    25% { transform: translate(30px, -30px) scale(1.1); }
-    50% { transform: translate(-20px, 20px) scale(0.9); }
-    75% { transform: translate(20px, 10px) scale(1.05); }
+    0%, 100% { 
+      transform: translate(0, 0) scale(1); 
+    }
+    25% { 
+      transform: translate(30px, -30px) scale(1.1); 
+    }
+    50% { 
+      transform: translate(-20px, 20px) scale(0.9); 
+    }
+    75% { 
+      transform: translate(20px, 10px) scale(1.05); 
+    }
+  }
+
+  @keyframes pulse-lime {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  @keyframes glow-pulse {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(214, 255, 63, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 40px rgba(214, 255, 63, 0.8);
+    }
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-scroll {
+    animation: scroll 30s linear infinite;
+  }
+
+  .animate-scroll:hover {
+    animation-play-state: paused;
+  }
+
+  /* Fade in animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes fadeInScale {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes fadeInPulse {
+    0% {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    50% {
+      opacity: 0.8;
+      transform: scale(1.02);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-in-up-delay {
+    animation: fadeInUp 0.8s ease-out 0.2s forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-in-up-delay-2 {
+    animation: fadeInUp 0.8s ease-out 0.4s forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-in-up-delay-3 {
+    animation: fadeInUp 0.8s ease-out 0.6s forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-in-up-delay-4 {
+    animation: fadeInUp 0.8s ease-out 0.8s forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-in-left {
+    animation: fadeInLeft 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-in-right {
+    animation: fadeInRight 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-in-scale {
+    animation: fadeInScale 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-in-pulse {
+    animation: fadeInPulse 1.2s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-stagger-1 {
+    animation: fadeInUp 0.8s ease-out 0.1s forwards;
+    opacity: 0;
+  }
+
+  .animate-stagger-2 {
+    animation: fadeInUp 0.8s ease-out 0.2s forwards;
+    opacity: 0;
+  }
+
+  .animate-stagger-3 {
+    animation: fadeInUp 0.8s ease-out 0.3s forwards;
+    opacity: 0;
+  }
+
+  /* Pause animations until elements are in view */
+  [class*="animate-fade-in"],
+  .animate-stagger-1,
+  .animate-stagger-2,
+  .animate-stagger-3 {
+    animation-play-state: paused;
+  }
+
+  .in-view[class*="animate-fade-in"],
+  .in-view.animate-stagger-1,
+  .in-view.animate-stagger-2,
+  .in-view.animate-stagger-3 {
+    animation-play-state: running;
   }
 }
+
+/* Custom site cursor and pointer */
+/* Default cursor for the whole site */
+html, body {
+  cursor: url('/cursor.png') 0 0, auto;
+}
+
+/* Pointer cursor for interactive elements */
+a, button, [role="button"], label, input[type="button"], input[type="submit"],
+input[type="reset"], select, summary, .cursor-pointer {
+  cursor: url('/pointer.png') 6 0, pointer;
+}
+
