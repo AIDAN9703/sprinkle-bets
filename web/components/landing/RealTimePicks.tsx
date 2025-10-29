@@ -38,15 +38,6 @@ export default function RealTimePicks() {
                 </span>
               </li>
             </ul>
-            <Link href="/how-it-works">
-              <Button
-                size="lg"
-                variant="outline"
-                className="cta-secondary w-full sm:w-auto"
-              >
-                Learn More
-              </Button>
-            </Link>
           </div>
           <div className="relative h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px] rounded-2xl sm:rounded-3xl overflow-hidden order-1 lg:order-2 animate-fade-in-scale">
             <Image

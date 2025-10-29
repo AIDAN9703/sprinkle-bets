@@ -15,7 +15,7 @@ export default function Hero() {
     <section className="section pt-16 sm:pt-32">
       <div className="section-container">
         <div className="text-left sm:text-center max-w-4xl mx-auto">
-          <h1 className="heading leading-tight tracking-tight animate-fade-in-up">
+          <h1 className="heading leading-tight tracking-tight">
             Stop Following Fakes.
             <br />
             <span className="text-primary animate-fade-in-up-delay">

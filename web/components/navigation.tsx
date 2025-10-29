@@ -45,51 +45,46 @@ export function Navigation() {
       >
         <div className="px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 sm:h-20">
-            {/* Logo */}
-            <Link href="/" className="flex items-center group">
-              <Image
-                src="/sb-logo.png"
-                alt="Sprinkle Bets"
-                width={40}
-                height={40}
-                className="sm:w-12 sm:h-12"
-              />
-            </Link>
-            {/* Desktop Navigation */}
-            <ul className="hidden md:flex items-center space-x-8">
-              <li>
-                <Link
-                  href="/about"
-                  className="text-foreground/80 hover:text-foreground transition-colors font-bold"
-                >
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/how-it-works"
-                  className="text-foreground/80 hover:text-foreground transition-colors font-bold"
-                >
-                  How It Works
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/marketplace"
-                  className="text-foreground/80 hover:text-foreground transition-colors font-bold"
-                >
-                  Marketplace
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/leaderboard"
-                  className="text-foreground/80 hover:text-foreground transition-colors font-bold"
-                >
-                  Leaderboard
-                </Link>
-              </li>
-            </ul>
+            {/* Logo and Navigation */}
+            <div className="flex items-center space-x-8">
+              {/* Logo */}
+              <Link href="/" className="flex items-center group">
+                <Image
+                  src="/sb-logo.png"
+                  alt="Sprinkle Bets"
+                  width={40}
+                  height={40}
+                  className="sm:w-12 sm:h-12"
+                />
+              </Link>
+              {/* Desktop Navigation */}
+              <ul className="hidden md:flex space-x-8">
+                <li>
+                  <Link
+                    href="/about"
+                    className="text-foreground/80 hover:text-foreground transition-colors font-bold"
+                  >
+                    About
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/marketplace"
+                    className="text-foreground/80 hover:text-foreground transition-colors font-bold"
+                  >
+                    Marketplace
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/leaderboard"
+                    className="text-foreground/80 hover:text-foreground transition-colors font-bold"
+                  >
+                    Leaderboard
+                  </Link>
+                </li>
+              </ul>
+            </div>
 
             {/* CTA Buttons */}
             <div className="hidden md:flex items-center space-x-3">
@@ -143,13 +138,6 @@ export function Navigation() {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   About
-                </Link>
-                <Link
-                  href="/how-it-works"
-                  className="block text-foreground/80 hover:text-foreground transition-colors font-bold py-2"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  How It Works
                 </Link>
                 <Link
                   href="/marketplace"

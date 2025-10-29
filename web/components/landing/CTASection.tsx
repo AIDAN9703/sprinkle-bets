@@ -18,15 +18,6 @@ export default function CTASection() {
               Get Started Free
             </Button>
           </Link>
-          <Link href="/how-it-works">
-            <Button
-              size="lg"
-              variant="outline"
-              className="cta-secondary w-full sm:w-auto"
-            >
-              Learn How It Works
-            </Button>
-          </Link>
         </div>
       </div>
     </section>

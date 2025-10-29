@@ -308,3 +308,107 @@ export const sortOptions = [
   { value: "recent", label: "Recently Active" },
 ];
 
+// -- Communities for Marketplace --
+export interface Community {
+  id: string;
+  name: string;
+  avatar: string; // Logo or cover img
+  description: string;
+  memberCount: number;
+  verifiedCapperCount: number;
+  sports: string[];
+  isPrivate: boolean;
+  featured: boolean;
+}
+
+export const mockCommunities: Community[] = [
+  {
+    id: '1',
+    name: 'Sharp Side Collective',
+    avatar: '/images/people-cheering.png',
+    description: 'Model-driven syndicate. Invite-only, CLV-focused discussions.',
+    memberCount: 188,
+    verifiedCapperCount: 8,
+    sports: ['NFL', 'NBA', 'NHL'],
+    isPrivate: true,
+    featured: true,
+  },
+  {
+    id: '2',
+    name: 'ValueVerse',
+    avatar: '/images/stock-basketball.png',
+    description: 'Public community of value bettors, high-volume NBA/NFL daily picks, all records verified.',
+    memberCount: 390,
+    verifiedCapperCount: 15,
+    sports: ['NBA', 'NFL'],
+    isPrivate: false,
+    featured: true,
+  },
+  {
+    id: '3',
+    name: 'Prop Shop',
+    avatar: '/images/slot-machine.png',
+    description: 'All props, all the time. Transparent stats, active Discord integration.',
+    memberCount: 142,
+    verifiedCapperCount: 4,
+    sports: ['NBA', 'NFL', 'MLB'],
+    isPrivate: false,
+    featured: false,
+  },
+  {
+    id: '4',
+    name: 'Dog Pound',
+    avatar: '/images/guy-winning-bet.png',
+    description: 'Seasonal, underdog-only picks, home of sharpest NFL contrarians.',
+    memberCount: 84,
+    verifiedCapperCount: 2,
+    sports: ['NFL'],
+    isPrivate: true,
+    featured: false,
+  },
+  {
+    id: '5',
+    name: 'Totals Lab',
+    avatar: '/images/hockey-player2.png',
+    description: 'Totals enthusiasts of all sports. Algorithm and eye test both welcome.',
+    memberCount: 156,
+    verifiedCapperCount: 6,
+    sports: ['NBA', 'MLB', 'NHL', 'Soccer'],
+    isPrivate: false,
+    featured: true,
+  },
+  {
+    id: '6',
+    name: 'College Cash Crew',
+    avatar: '/images/people-in-bar.png',
+    description: 'Obsessive breakdowns for NCAAF/NCAAB—stats nerds and fans alike.',
+    memberCount: 67,
+    verifiedCapperCount: 3,
+    sports: ['College Football', 'College Basketball'],
+    isPrivate: false,
+    featured: false,
+  },
+  {
+    id: '7',
+    name: 'World Football Alliance',
+    avatar: '/images/hockey-player.png',
+    description: 'Global football chat and picks. Weekly leaderboards for verified soccer quants.',
+    memberCount: 512,
+    verifiedCapperCount: 10,
+    sports: ['Soccer'],
+    isPrivate: false,
+    featured: false,
+  },
+  {
+    id: '8',
+    name: 'Proven Parlays',
+    avatar: '/images/people-cheering.png',
+    description: 'Don’t get tricked by fake parlay artists. Only proven long-term winners allowed.',
+    memberCount: 91,
+    verifiedCapperCount: 1,
+    sports: ['NBA', 'NFL', 'MLB'],
+    isPrivate: true,
+    featured: false,
+  },
+];
+
