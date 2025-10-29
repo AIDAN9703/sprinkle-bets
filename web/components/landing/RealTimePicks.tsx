@@ -1,5 +1,4 @@
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
+// (No CTA needed here currently)
 import Image from "next/image";
 import { Zap } from "lucide-react";
 
@@ -16,7 +15,7 @@ export default function RealTimePicks() {
             <p className="subheading mb-6 sm:mb-6 leading-relaxed">
               Never miss a winning opportunity. Our platform delivers picks
               instantly to your phone, Discord, Telegram, or SMS the moment
-              they're posted.
+              they&apos;re posted.
             </p>
             <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
               <li className="flex items-start gap-3">

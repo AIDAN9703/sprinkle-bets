@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 import { Lock, Star, Users, Shield } from "lucide-react";
-import { mockCommunities, sportOptions } from "@/lib/mock-data";
+import { mockCommunities, sportOptions, type Community } from "@/lib/mock-data";
 
 export default function MarketplacePage() {
   const [search, setSearch] = useState("");
@@ -132,7 +132,7 @@ export default function MarketplacePage() {
   );
 }
 
-function CommunityCard({ community }: { community: any }) {
+function CommunityCard({ community }: { community: Community }) {
   return (
     <Card className="bg-card hover:shadow-2xl transition-all duration-300 border-2 border-border">
       <CardContent className="pt-6">

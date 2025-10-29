@@ -1,5 +1,4 @@
 import Hero from "@/components/landing/Hero";
-import ProductExplanation from "@/components/landing/ProductExplanation";
 import RealTimePicks from "@/components/landing/RealTimePicks";
 import ForCreators from "@/components/landing/ForCreators";
 import PeopleCheering from "@/components/landing/PeopleCheering";

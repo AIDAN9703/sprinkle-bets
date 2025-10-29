@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { ArrowRight, AlertCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function ForCreators() {
   return (
@@ -25,7 +25,7 @@ export default function ForCreators() {
           {/* Left: The Pitch */}
           <div className="animate-fade-in-left">
             <h2 className="heading leading-tight">
-              If you can win, we'll{" "}
+              If you can win, we&apos;ll{" "}
               <span className="text-primary">pay you</span> for it.
             </h2>
             <p className="subheading mb-8 sm:mb-12 leading-relaxed">

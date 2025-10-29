@@ -5,7 +5,9 @@ export default function ProductExplanation() {
     <section className="section">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12 sm:mb-16 lg:mb-20">
-          <h2 className="heading animate-fade-in-up">Here's How It Works</h2>
+          <h2 className="heading animate-fade-in-up">
+            Here&apos;s How It Works
+          </h2>
           <p className="subheading lg:text-2xl max-w-3xl mx-auto animate-fade-in-up-delay">
             A marketplace where skilled sports bettors sell their picks—but only
             after proving they can actually win.
@@ -91,7 +93,7 @@ export default function ProductExplanation() {
               Get Picks Instantly
             </h3>
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
-              Picks hit your phone the second they're posted. No delays, no
+              Picks hit your phone the second they&apos;re posted. No delays, no
               missed opportunities, no excuses.
             </p>
           </div>

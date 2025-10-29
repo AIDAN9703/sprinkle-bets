@@ -23,8 +23,8 @@ export default function PeopleCheering() {
             </h2>
             <p className="subheading mb-6 sm:mb-8 leading-relaxed">
               Tired of fake cappers with photoshopped records? So were we.
-              That's why every pick on our platform comes from someone who's
-              proven they can beat the books.
+              That&apos;s why every pick on our platform comes from someone
+              who&apos;s proven they can beat the books.
             </p>
             <Link href="/marketplace">
               <Button size="lg" className="cta-primary w-full sm:w-auto">
