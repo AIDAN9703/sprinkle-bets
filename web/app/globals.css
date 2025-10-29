@@ -272,36 +272,39 @@
   );
 }
 
-/* Navbar Glass Effect */
-@utility navbar-glass {
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.12) 0%,
-    rgba(255, 255, 255, 0.06) 50%,
-    rgba(255, 255, 255, 0.03) 100%
-  );
-  backdrop-filter: blur(40px) saturate(180%);
-  -webkit-backdrop-filter: blur(40px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow:
-    0 8px 32px 0 rgba(20, 20, 20, 0.1),
-    0 0 0 1px rgba(255, 255, 255, 0.08) inset,
-    0 1px 0 rgba(255, 255, 255, 0.12) inset;
-}
+/* Navbar Glass Effect (prod-safe classes) */
+@layer utilities {
+  .navbar-glass {
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.12) 0%,
+      rgba(255, 255, 255, 0.06) 50%,
+      rgba(255, 255, 255, 0.03) 100%
+    );
+    backdrop-filter: blur(40px) saturate(180%);
+    -webkit-backdrop-filter: blur(40px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow:
+      0 8px 32px 0 rgba(20, 20, 20, 0.1),
+      0 0 0 1px rgba(255, 255, 255, 0.08) inset,
+      0 1px 0 rgba(255, 255, 255, 0.12) inset;
+  }
 
-@utility navbar-glass-dark {
-  background: linear-gradient(
-    135deg,
-    rgba(20, 20, 20, 0.95) 0%,
-    rgba(20, 20, 20, 0.85) 50%,
-    rgba(20, 20, 20, 0.8) 100%
-  );
-  backdrop-filter: blur(40px) saturate(180%);
-  -webkit-backdrop-filter: blur(40px) saturate(180%);
-  border: 1px solid rgba(214, 255, 63, 0.15);
-  box-shadow:
-    0 8px 32px 0 rgba(0, 0, 0, 0.3),
-    0 0 0 1px rgba(214, 255, 63, 0.08) inset;
+  .navbar-glass-dark {
+    background: linear-gradient(
+      135deg,
+      rgba(12, 12, 12, 0.98) 0%,
+      rgba(16, 16, 16, 0.92) 50%,
+      rgba(18, 18, 18, 0.88) 100%
+    );
+    backdrop-filter: blur(48px) saturate(220%);
+    -webkit-backdrop-filter: blur(48px) saturate(220%);
+    border: 1px solid rgba(214, 255, 63, 0.22);
+    box-shadow:
+      0 10px 36px 0 rgba(0, 0, 0, 0.45),
+      0 0 0 1px rgba(214, 255, 63, 0.12) inset,
+      0 1px 0 rgba(255, 255, 255, 0.04) inset;
+  }
 }
 
 /* Button Styles */
