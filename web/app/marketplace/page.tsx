@@ -184,7 +184,7 @@ function CommunityCard({ community }: { community: Community }) {
         <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
           {community.description}
         </p>
-        <Button className="w-full btn-lime font-bold">
+        <Button className="w-full font-bold">
           {community.isPrivate ? "Request Invite" : "Join Community"}
         </Button>
       </CardContent>

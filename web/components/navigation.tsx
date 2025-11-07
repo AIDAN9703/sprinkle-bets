@@ -4,7 +4,6 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { Menu, X, Moon, Sun } from "lucide-react";
-import Image from "next/image";
 
 export function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -41,9 +40,7 @@ export function Navigation() {
     <div className="sticky top-0 z-50 p-4">
       <nav
         id="navbar"
-        className={`max-w-6xl mx-auto transition-all duration-300 rounded-2xl ${
-          isDark ? "navbar-glass-dark" : "navbar-glass"
-        }`}
+        className="max-w-6xl mx-auto navbar-glass transition-all duration-300 rounded-2xl"
       >
         <div className="px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 sm:h-20">
@@ -51,13 +48,14 @@ export function Navigation() {
             <div className="flex items-center space-x-8">
               {/* Logo */}
               <Link href="/" className="flex items-center group">
-                <Image
-                  src="/p2w-logo.png"
-                  alt="Pay2Win"
-                  width={120}
-                  height={120}
-                  className="sm:w-24 sm:h-24"
-                />
+                <span
+                  className="text-2xl sm:text-3xl font-bold tracking-wide text-foreground"
+                  style={{
+                    fontFamily: "var(--font-bebas-neue), system-ui, sans-serif",
+                  }}
+                >
+                  PAY<span className="text-primary">2</span>WIN
+                </span>
               </Link>
               {/* Desktop Navigation */}
               <ul className="hidden md:flex space-x-8">
@@ -180,9 +178,7 @@ export function Navigation() {
                   </Button>
                 </Link>
                 <Link href="/register" className="block">
-                  <Button className="w-full btn-lime font-bold">
-                    Get Started
-                  </Button>
+                  <Button className="w-full font-bold">Get Started</Button>
                 </Link>
               </div>
             </div>

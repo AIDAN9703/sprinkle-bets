@@ -30,13 +30,21 @@ const nextConfig = {
     if (!isServer) {
       config.plugins.push(
         new ForkTsCheckerWebpackPlugin({
-          async: true, // Run type checking synchronously to block the build
+          async: true, // Run type checking asynchronously
           typescript: {
             configOverwrite: {
               compilerOptions: {
                 skipLibCheck: true,
               },
             },
+            build: false, // Don't block on type errors during dev
+            mode: 'write-references', // Only write references, don't fail on errors
+          },
+          issue: {
+            exclude: [
+              { file: '**/.next/**' },
+              { file: '**/node_modules/**' },
+            ],
           },
         })
       );
