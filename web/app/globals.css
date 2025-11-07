@@ -280,39 +280,17 @@
   );
 }
 
-/* Navbar Glass Effect - production safe with fallbacks */
-@layer utilities {
-  .navbar-glass {
-    /* Fallback background - more opaque for better visibility */
-    background: rgba(255, 255, 255, 0.8);
-    /* Glass effect */
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    /* Force GPU acceleration */
-    transform: translateZ(0);
-    will-change: backdrop-filter;
-  }
+/* Navbar Glass Effect - outside layer to prevent purging */
+.navbar-glass {
+  background: rgba(255, 255, 255, 0.15) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
 
-  /* If backdrop-filter is supported, use more transparent background */
-  @supports (backdrop-filter: blur(20px)) {
-    .navbar-glass {
-      background: rgba(255, 255, 255, 0.15);
-    }
-  }
-
-  .dark .navbar-glass {
-    /* Fallback background */
-    background: rgba(0, 0, 0, 0.9);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-  }
-
-  /* If backdrop-filter is supported in dark mode */
-  @supports (backdrop-filter: blur(20px)) {
-    .dark .navbar-glass {
-      background: rgba(0, 0, 0, 0.4);
-    }
-  }
+.dark .navbar-glass {
+  background: rgba(0, 0, 0, 0.4) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
 
 /* Button Styles - Clean and consolidated */
