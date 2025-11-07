@@ -43,10 +43,9 @@ export function Navigation() {
         className="max-w-6xl mx-auto navbar-glass transition-all duration-300 rounded-2xl"
       >
         <div className="px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 sm:h-20">
-            {/* Logo and Navigation */}
-            <div className="flex items-center space-x-8">
-              {/* Logo */}
+          <div className="flex items-center h-16 sm:h-20">
+            {/* Logo */}
+            <div className="flex items-center shrink-0">
               <Link href="/" className="flex items-center group">
                 <span
                   className="text-2xl sm:text-3xl font-bold tracking-wide text-foreground"
@@ -57,37 +56,38 @@ export function Navigation() {
                   PAY<span className="text-primary">2</span>WIN
                 </span>
               </Link>
-              {/* Desktop Navigation */}
-              <ul className="hidden md:flex space-x-8">
-                <li>
-                  <Link
-                    href="/about"
-                    className="text-foreground/80 hover:text-foreground transition-colors font-bold"
-                  >
-                    About
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/marketplace"
-                    className="text-foreground/80 hover:text-foreground transition-colors font-bold"
-                  >
-                    Marketplace
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/leaderboard"
-                    className="text-foreground/80 hover:text-foreground transition-colors font-bold"
-                  >
-                    Leaderboard
-                  </Link>
-                </li>
-              </ul>
             </div>
 
+            {/* Desktop Navigation - Centered between logo and buttons */}
+            <ul className="hidden md:flex items-center justify-center flex-1 space-x-4 sm:space-x-6">
+              <li>
+                <Link
+                  href="/about"
+                  className="text-xs sm:text-sm text-foreground/80 hover:text-foreground transition-colors font-bold"
+                >
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/marketplace"
+                  className="text-xs sm:text-sm text-foreground/80 hover:text-foreground transition-colors font-bold"
+                >
+                  Marketplace
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/leaderboard"
+                  className="text-xs sm:text-sm text-foreground/80 hover:text-foreground transition-colors font-bold"
+                >
+                  Leaderboard
+                </Link>
+              </li>
+            </ul>
+
             {/* CTA Buttons */}
-            <div className="hidden md:flex items-center space-x-3">
+            <div className="hidden md:flex items-center space-x-3 shrink-0">
               {/* Theme Toggle */}
               <button
                 onClick={toggleTheme}
