@@ -22,7 +22,7 @@ export default function PeopleCheering() {
               <span className="text-primary">You Win</span>
             </h2>
             <p className="subheading mb-6 sm:mb-8 leading-relaxed">
-              No more paying upfront for losing advice. Stake on a Sharp's pick — funds are held in escrow. If they win, they get paid. If they lose, your money is returned instantly.
+              No more paying upfront for losing advice. Stake on a Sharp&apos;s pick — funds are held in escrow. If they win, they get paid. If they lose, your money is returned instantly.
             </p>
             <Link href="/marketplace">
               <Button size="lg" className="cta-primary w-full sm:w-auto">
