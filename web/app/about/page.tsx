@@ -232,7 +232,7 @@ export default function AboutPage() {
                   <span className="text-destructive font-semibold">
                     If LOSS
                   </span>{" "}
-                  → Users' funds return to their accounts.
+                  → Users&apos; funds return to their accounts.
                 </p>
               </div>
             </div>
