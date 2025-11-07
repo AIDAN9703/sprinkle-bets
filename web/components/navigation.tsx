@@ -41,7 +41,9 @@ export function Navigation() {
     <div className="sticky top-0 z-50 p-4">
       <nav
         id="navbar"
-        className="max-w-6xl mx-auto navbar-glass dark:navbar-glass-dark transition-all duration-300 rounded-2xl"
+        className={`max-w-6xl mx-auto transition-all duration-300 rounded-2xl ${
+          isDark ? "navbar-glass-dark" : "navbar-glass"
+        }`}
       >
         <div className="px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 sm:h-20">
@@ -50,11 +52,11 @@ export function Navigation() {
               {/* Logo */}
               <Link href="/" className="flex items-center group">
                 <Image
-                  src="/sb-logo.png"
-                  alt="Sprinkle Bets"
-                  width={40}
-                  height={40}
-                  className="sm:w-12 sm:h-12"
+                  src="/p2w-logo.png"
+                  alt="Pay2Win"
+                  width={120}
+                  height={120}
+                  className="sm:w-24 sm:h-24"
                 />
               </Link>
               {/* Desktop Navigation */}

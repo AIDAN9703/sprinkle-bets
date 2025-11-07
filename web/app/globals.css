@@ -57,15 +57,15 @@
 }
 
 /* ============================================
-   SPRINKLE BETS BRAND COLORS
+   PAY2WIN BRAND COLORS
    ============================================ */
 @layer base {
   :root {
-    /* Brand Colors - Sprinkle Bets #D6FF3F Lime Green & Black */
-    --brand-lime: 73 100% 62%;           /* #D6FF3F - Your actual brand lime */
+    /* Brand Colors - Lime Energy + Black/Chrome */
+    --brand-lime: 74 100% 62%;           /* #D6FF3F */
+    --brand-lime-dark: 74 80% 48%;
+    --brand-lime-light: 74 100% 75%;
     --brand-black: 0 0% 8%;              /* #141414 - Deep black */
-    --brand-lime-light: 73 100% 72%;     /* Lighter lime */
-    --brand-lime-dark: 73 100% 50%;      /* Darker lime */
     
     /* Light Mode Colors */
     --background: 0 0% 100%;             /* White */
@@ -77,8 +77,8 @@
     --popover: 0 0% 100%;                /* White */
     --popover-foreground: 0 0% 8%;       /* Near black */
     
-    --primary: 73 100% 62%;              /* #D6FF3F Lime green */
-    --primary-foreground: 0 0% 8%;       /* Black text on lime */
+    --primary: var(--brand-lime);
+    --primary-foreground: 0 0% 98%;      /* White on purple */
     
     --secondary: 0 0% 96%;               /* Light gray */
     --secondary-foreground: 0 0% 8%;     /* Near black */
@@ -86,22 +86,22 @@
     --muted: 0 0% 96%;                   /* Light gray */
     --muted-foreground: 0 0% 45%;        /* Medium gray */
     
-    --accent: 73 100% 62%;               /* #D6FF3F Lime green */
-    --accent-foreground: 0 0% 8%;        /* Black text */
+    --accent: var(--brand-lime-light);
+    --accent-foreground: 0 0% 98%;       /* White text */
     
     --destructive: 0 84% 60%;            /* Red for errors */
     --destructive-foreground: 0 0% 98%;  /* White text */
     
     --border: 0 0% 90%;                  /* Light border */
     --input: 0 0% 90%;                   /* Light input border */
-    --ring: 73 100% 62%;                 /* #D6FF3F Lime focus ring */
+    --ring: var(--brand-lime);
     
     /* Chart Colors */
-    --chart-1: 73 100% 62%;              /* #D6FF3F Lime */
+    --chart-1: var(--brand-lime);
     --chart-2: 0 0% 8%;                  /* Black */
-    --chart-3: 73 100% 45%;              /* Dark lime */
+    --chart-3: var(--brand-lime-dark);
     --chart-4: 0 0% 60%;                 /* Gray */
-    --chart-5: 73 100% 75%;              /* Light lime */
+    --chart-5: var(--brand-lime-light);
     
     /* Border Radius */
     --radius: 0.5rem;
@@ -118,8 +118,8 @@
     --popover: 0 0% 10%;                 /* Dark gray */
     --popover-foreground: 0 0% 98%;      /* Near white */
     
-    --primary: 73 100% 62%;              /* #D6FF3F Lime green */
-    --primary-foreground: 0 0% 8%;       /* Black text on lime */
+    --primary: var(--brand-lime);
+    --primary-foreground: 0 0% 98%;      /* White on purple */
     
     --secondary: 0 0% 15%;               /* Dark gray */
     --secondary-foreground: 0 0% 98%;    /* Near white */
@@ -127,22 +127,22 @@
     --muted: 0 0% 15%;                   /* Dark gray */
     --muted-foreground: 0 0% 65%;        /* Light gray */
     
-    --accent: 73 100% 62%;               /* #D6FF3F Lime green */
-    --accent-foreground: 0 0% 8%;        /* Black text */
+    --accent: var(--brand-lime-light);
+    --accent-foreground: 0 0% 98%;       /* White text */
     
     --destructive: 0 84% 60%;            /* Red for errors */
     --destructive-foreground: 0 0% 98%;  /* White text */
     
     --border: 0 0% 20%;                  /* Dark border */
     --input: 0 0% 20%;                   /* Dark input border */
-    --ring: 73 100% 62%;                 /* #D6FF3F Lime focus ring */
+    --ring: var(--brand-lime);
     
     /* Chart Colors - Dark Mode */
-    --chart-1: 73 100% 62%;              /* #D6FF3F Lime */
+    --chart-1: var(--brand-lime);
     --chart-2: 0 0% 90%;                 /* Light gray */
-    --chart-3: 73 100% 45%;              /* Dark lime */
+    --chart-3: var(--brand-lime-dark);
     --chart-4: 0 0% 40%;                 /* Medium gray */
-    --chart-5: 73 100% 75%;              /* Light lime */
+    --chart-5: var(--brand-lime-light);
   }
 }
 
@@ -156,6 +156,14 @@
 
   body {
     @apply bg-background text-foreground antialiased;
+    font-family: var(--font-geist-sans), system-ui, sans-serif;
+  }
+
+  /* Apply Bebas Neue to all headings */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-bebas-neue), system-ui, sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.02em;
   }
 }
 
@@ -273,6 +281,7 @@
 }
 
 /* Navbar Glass Effect - production safe */
+/* Using @layer utilities to ensure it's not purged and works in production */
 @layer utilities {
   .navbar-glass {
     background: linear-gradient(
@@ -281,7 +290,7 @@
       rgba(255, 255, 255, 0.06) 50%,
       rgba(255, 255, 255, 0.03) 100%
     );
-    /* fallback so it’s never fully transparent */
+    /* fallback so it's never fully transparent */
     background-color: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(40px) saturate(180%);
     -webkit-backdrop-filter: blur(40px) saturate(180%);
@@ -290,17 +299,22 @@
       0 8px 32px 0 rgba(20, 20, 20, 0.1),
       0 0 0 1px rgba(255, 255, 255, 0.08) inset,
       0 1px 0 rgba(255, 255, 255, 0.12) inset;
-    isolation: isolate;
+    /* Force GPU acceleration for better backdrop-filter performance */
+    transform: translateZ(0);
+    will-change: backdrop-filter;
+    /* Ensure backdrop-filter works by not isolating */
+    position: relative;
   }
 
-  .dark .navbar-glass-dark {
+  /* Dark mode variant - standalone class for conditional application */
+  .navbar-glass-dark {
     background: linear-gradient(
       135deg,
       rgba(20, 20, 20, 0.95) 0%,
       rgba(20, 20, 20, 0.85) 50%,
       rgba(20, 20, 20, 0.80) 100%
     );
-    /* fallback so it’s never fully transparent */
+    /* fallback so it's never fully transparent */
     background-color: rgba(10, 10, 10, 0.88);
     backdrop-filter: blur(40px) saturate(180%);
     -webkit-backdrop-filter: blur(40px) saturate(180%);
@@ -308,7 +322,31 @@
     box-shadow:
       0 8px 32px 0 rgba(0, 0, 0, 0.3),
       0 0 0 1px rgba(214, 255, 63, 0.08) inset;
-    isolation: isolate;
+    /* Force GPU acceleration */
+    transform: translateZ(0);
+    will-change: backdrop-filter;
+    position: relative;
+  }
+
+  /* Also support dark mode variant selector for compatibility */
+  .dark .navbar-glass-dark,
+  html.dark .navbar-glass-dark {
+    background: linear-gradient(
+      135deg,
+      rgba(20, 20, 20, 0.95) 0%,
+      rgba(20, 20, 20, 0.85) 50%,
+      rgba(20, 20, 20, 0.80) 100%
+    );
+    background-color: rgba(10, 10, 10, 0.88);
+    backdrop-filter: blur(40px) saturate(180%);
+    -webkit-backdrop-filter: blur(40px) saturate(180%);
+    border: 1px solid rgba(214, 255, 63, 0.15);
+    box-shadow:
+      0 8px 32px 0 rgba(0, 0, 0, 0.3),
+      0 0 0 1px rgba(214, 255, 63, 0.08) inset;
+    transform: translateZ(0);
+    will-change: backdrop-filter;
+    position: relative;
   }
 }
 
@@ -347,7 +385,10 @@
   }
 
   .heading {
-    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-foreground;
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 sm:mb-6 text-foreground;
+    font-family: var(--font-bebas-neue), system-ui, sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.02em;
   }
 
   .subheading {
@@ -363,15 +404,4 @@
   }
 }
 
-/* Custom site cursor and pointer */
-/* Default cursor for the whole site */
-html, body {
-  cursor: url('/cursor.png') 0 0, auto;
-}
-
-/* Pointer cursor for interactive elements */
-a, button, [role="button"], label, input[type="button"], input[type="submit"],
-input[type="reset"], select, summary, .cursor-pointer {
-  cursor: url('/pointer.png') 6 0, pointer;
-}
 

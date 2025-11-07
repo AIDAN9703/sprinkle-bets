@@ -14,12 +14,11 @@ export function Footer() {
                 <Shield className="h-3.5 w-3.5 text-accent absolute -bottom-1 -right-1" />
               </div>
               <span className="text-xl font-bold text-foreground">
-                Sprinkle Bets
+                Pay2Win
               </span>
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              The only verified sports betting content marketplace. Trust the
-              edge.
+              The world’s first performance-based sports betting creator marketplace.
             </p>
           </div>
 
@@ -128,7 +127,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-muted-foreground">
-            © 2025 Sprinkle Bets. All rights reserved.
+            © 2025 Pay2Win. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a

@@ -6,11 +6,10 @@ export default function CTASection() {
     <section className="section">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="heading animate-fade-in-pulse">
-          Stop Losing to Fake Cappers
+          Where Performance Pays
         </h2>
         <p className="subheading animate-fade-in-up-delay mb-6 sm:mb-8">
-          Join thousands of bettors who demand proof. Start following verified
-          communities today.
+          Join the first marketplace where Sharps only earn when their picks win. No hype, just results.
         </p>
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center animate-fade-in-up-delay-2">
           <Link href="/register">

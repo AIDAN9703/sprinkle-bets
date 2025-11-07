@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Bebas_Neue } from "next/font/google";
 import "./globals.css";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
@@ -16,10 +17,17 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
+const bebasNeue = Bebas_Neue({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-bebas-neue",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
-  title: "Sprinkle Bets - Verified Sports Betting Picks",
+  title: "Pay2Win — Only Winners Get Paid",
   description:
-    "The only sports betting marketplace with 100% verified cappers. Trust the edge with proven performance and validated algorithms.",
+    "Pay2Win is the first performance-based sports betting creator marketplace. Sharps only earn when their picks win.",
 };
 
 export default function RootLayout({
@@ -47,7 +55,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${bebasNeue.variable} antialiased`}
       >
         {/* Attach scroll-reveal observer */}
         <RevealOnScroll />

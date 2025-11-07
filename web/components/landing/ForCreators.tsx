@@ -25,12 +25,11 @@ export default function ForCreators() {
           {/* Left: The Pitch */}
           <div className="animate-fade-in-left">
             <h2 className="heading leading-tight">
-              If you can win, we&apos;ll{" "}
-              <span className="text-primary">pay you</span> for it.
+              Only Winners Get{" "}
+              <span className="text-primary">Paid</span>
             </h2>
             <p className="subheading mb-8 sm:mb-12 leading-relaxed">
-              Prove your edge. Build a following. Get paid. We handle
-              verification, subscribers, and payments—you focus on winning bets.
+              Post picks. Followers stake. If you win, you get paid. If you lose, they get refunded. We handle escrow, payments, and results—you focus on winning.
             </p>
 
             {/* The Deal */}
@@ -40,7 +39,7 @@ export default function ForCreators() {
                   $5,000
                 </div>
                 <div className="text-sm sm:text-base text-muted-foreground">
-                  Monthly bonus for #1 ranked capper
+                  Monthly bonus for #1 ranked Sharp
                 </div>
               </div>
               <div className="border-l-4 border-primary pl-4 sm:pl-6">
@@ -61,15 +60,15 @@ export default function ForCreators() {
               </div>
             </div>
 
-            <Link href="/register?type=capper">
+            <Link href="/register?type=sharp">
               <Button size="lg" className="cta-primary w-full sm:w-auto">
-                Apply Now
+                Become a Sharp
                 <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
               </Button>
             </Link>
           </div>
 
-          {/* Right: Interactive Capper Journey */}
+          {/* Right: Interactive Sharp Journey */}
           <div className="space-y-8 sm:space-y-10 lg:space-y-12 flex flex-col justify-center pt-4 sm:pt-6 animate-fade-in-right">
             {/* Step 1 */}
             <div className="flex items-start gap-3 sm:gap-4">
@@ -78,11 +77,10 @@ export default function ForCreators() {
               </div>
               <div className="flex-1">
                 <h4 className="text-base sm:text-lg font-bold text-foreground mb-1 sm:mb-2">
-                  Apply & Verify
+                  Create Profile & Post Picks
                 </h4>
                 <p className="text-xs sm:text-sm text-muted-foreground">
-                  Submit your track record. We verify every bet with timestamped
-                  odds and closing line data.
+                  Set your price per stake. Post picks with sport, odds, and description. Your public analytics track your performance.
                 </p>
               </div>
             </div>
@@ -94,11 +92,10 @@ export default function ForCreators() {
               </div>
               <div className="flex-1">
                 <h4 className="text-base sm:text-lg font-bold text-foreground mb-1 sm:mb-2">
-                  Build Your Following
+                  Followers Stake on Your Picks
                 </h4>
                 <p className="text-xs sm:text-sm text-muted-foreground">
-                  Start with a small subscriber base. Prove consistency. Grow
-                  organically through performance.
+                  Funds are locked in escrow as users buy in. The more stakes, the bigger your potential payout—but only if you win.
                 </p>
               </div>
             </div>
@@ -110,11 +107,10 @@ export default function ForCreators() {
               </div>
               <div className="flex-1">
                 <h4 className="text-base sm:text-lg font-bold text-foreground mb-1 sm:mb-2">
-                  Scale & Optimize
+                  Win = Get Paid. Lose = Refund
                 </h4>
                 <p className="text-xs sm:text-sm text-muted-foreground">
-                  Premium placement, higher revenue shares, exclusive bonuses.
-                  We reward excellence.
+                  Game ends. Results graded. If WIN → you collect all stakes (minus 10% platform fee). If LOSS → funds return to users. The more you win, the more you earn.
                 </p>
               </div>
             </div>

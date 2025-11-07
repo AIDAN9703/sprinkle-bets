@@ -18,17 +18,15 @@ export default function PeopleCheering() {
           </div>
           <div className="order-1 lg:order-2 animate-fade-in-left">
             <h2 className="heading">
-              Join Bettors Who Demand{" "}
-              <span className="text-primary">Proof</span>
+              Only Pay When{" "}
+              <span className="text-primary">You Win</span>
             </h2>
             <p className="subheading mb-6 sm:mb-8 leading-relaxed">
-              Tired of fake cappers with photoshopped records? So were we.
-              That&apos;s why every pick on our platform comes from someone
-              who&apos;s proven they can beat the books.
+              No more paying upfront for losing advice. Stake on a Sharp's pick — funds are held in escrow. If they win, they get paid. If they lose, your money is returned instantly.
             </p>
             <Link href="/marketplace">
               <Button size="lg" className="cta-primary w-full sm:w-auto">
-                Browse Cappers
+                Browse Sharps
                 <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
               </Button>
             </Link>

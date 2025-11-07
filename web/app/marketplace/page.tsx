@@ -39,8 +39,7 @@ export default function MarketplacePage() {
         <div className="section-container max-w-5xl">
           <h1 className="heading">Find Your Community</h1>
           <p className="subheading mb-6">
-            Explore betting communities run by real sharps. Join public groups
-            or request an invite—every published record is verified.
+            Browse top-performing Sharps by sport, ROI, and win rate. Stake on picks — funds are held in escrow until results are verified.
           </p>
           {/* Filters */}
           <div className="flex flex-col md:flex-row gap-3 mb-6">
@@ -162,7 +161,7 @@ function CommunityCard({ community }: { community: Community }) {
               <Users className="h-3 w-3" />
               <span>{community.memberCount} members</span>
               <Shield className="h-3 w-3" />
-              <span>{community.verifiedCapperCount} verified cappers</span>
+              <span>{community.verifiedCapperCount} Sharps</span>
             </div>
             <div className="flex flex-wrap gap-1 mt-1">
               {community.sports.slice(0, 3).map((s: string) => (

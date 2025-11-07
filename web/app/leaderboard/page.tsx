@@ -17,7 +17,7 @@ type RankedCommunity = {
 export default function LeaderboardPage() {
   const [timeframe, setTimeframe] = useState<"monthly" | "allTime">("monthly");
 
-  // Simple derived score: verified capper strength (70%) + normalized member size (30%)
+  // Simple derived score: Sharp performance (70%) + normalized member size (30%)
   const ranked: RankedCommunity[] = mockCommunities
     .map((community, index) => ({
       community,
@@ -39,7 +39,7 @@ export default function LeaderboardPage() {
           <div className="text-center mb-6">
             <h1 className="heading">Top Communities</h1>
             <p className="subheading">
-              Ranked by verified capper strength and community size.
+              Ranked by Sharp performance and win rates. Top performers earn more.
             </p>
           </div>
           {/* Timeframe Toggle (placeholder for future real data) */}
@@ -113,10 +113,10 @@ export default function LeaderboardPage() {
                 <Shield className="h-8 w-8 text-primary" />
               </div>
               <h3 className="text-xl font-bold mb-2 text-foreground">
-                Verified Weight: 70%
+                Performance Weight: 70%
               </h3>
               <p className="text-muted-foreground">
-                More verified cappers → higher rank.
+                More winning Sharps → higher rank.
               </p>
             </div>
             <div className="text-center">
@@ -216,9 +216,9 @@ function PodiumCard({
           <span className="inline-flex items-center gap-1">
             <Users className="h-3 w-3" /> {community.memberCount} members
           </span>
-          <span className="inline-flex items-center gap-1">
+            <span className="inline-flex items-center gap-1">
             <Shield className="h-3 w-3" /> {community.verifiedCapperCount}{" "}
-            verified
+            Sharps
           </span>
           {community.isPrivate && <Lock className="h-3 w-3" />}
         </div>
@@ -285,7 +285,7 @@ function LeaderboardRow({ entry }: { entry: RankedCommunity }) {
               </p>
             </div>
             <div className="text-center">
-              <p className="text-xs text-muted-foreground mb-1">Verified</p>
+              <p className="text-xs text-muted-foreground mb-1">Sharps</p>
               <p className="text-lg font-bold text-primary">
                 {community.verifiedCapperCount}
               </p>
@@ -309,7 +309,7 @@ function LeaderboardRow({ entry }: { entry: RankedCommunity }) {
               </p>
             </div>
             <div>
-              <p className="text-xs text-muted-foreground mb-1">Verified</p>
+              <p className="text-xs text-muted-foreground mb-1">Sharps</p>
               <p className="text-sm font-bold text-primary">
                 {community.verifiedCapperCount}
               </p>

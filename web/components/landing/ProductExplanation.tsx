@@ -9,8 +9,7 @@ export default function ProductExplanation() {
             Here&apos;s How It Works
           </h2>
           <p className="subheading lg:text-2xl max-w-3xl mx-auto animate-fade-in-up-delay">
-            A marketplace where skilled sports bettors sell their picks—but only
-            after proving they can actually win.
+            The first marketplace where Sharps only get paid when their picks win. Funds are held in escrow until results are verified.
           </p>
         </div>
 
@@ -36,23 +35,23 @@ export default function ProductExplanation() {
                   500+
                 </div>
                 <div className="text-xs sm:text-sm text-muted-foreground">
-                  Verified Bets Required
+                  Escrow Protection
                 </div>
               </div>
               <div className="bg-card border-2 border-border rounded-lg sm:rounded-xl p-4 sm:p-6 shadow-lg sm:shadow-xl animate-stagger-2">
                 <div className="text-2xl sm:text-3xl font-bold text-primary mb-1">
-                  100%
+                  Win-Tied
                 </div>
                 <div className="text-xs sm:text-sm text-muted-foreground">
-                  Fraud-Proof Records
+                  Payouts Only
                 </div>
               </div>
               <div className="bg-card border-2 border-border rounded-lg sm:rounded-xl p-4 sm:p-6 shadow-lg sm:shadow-xl animate-stagger-3">
                 <div className="text-2xl sm:text-3xl font-bold text-primary mb-1">
-                  Real-Time
+                  Instant
                 </div>
                 <div className="text-xs sm:text-sm text-muted-foreground">
-                  Pick Delivery
+                  Refunds on Loss
                 </div>
               </div>
             </div>
@@ -66,11 +65,10 @@ export default function ProductExplanation() {
               01
             </div>
             <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-foreground">
-              Cappers Apply
+              Sharps Post Picks
             </h3>
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
-              Anyone can apply, but only those who prove 500+ bets with positive
-              ROI and CLV get approved. No fake records allowed.
+              Expert bettors create profiles and post live picks with sport, odds, description, and price per stake. Public analytics track their performance.
             </p>
           </div>
           <div>
@@ -78,11 +76,10 @@ export default function ProductExplanation() {
               02
             </div>
             <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-foreground">
-              You Subscribe
+              You Stake on Picks
             </h3>
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
-              Browse verified cappers, check their full history, and subscribe
-              to the ones that match your betting style.
+              Browse top-performing Sharps by sport, ROI, and win rate. Choose a pick and lock in your stake. Funds are held in escrow until results are verified.
             </p>
           </div>
           <div className="sm:col-span-2 lg:col-span-1">
@@ -90,11 +87,10 @@ export default function ProductExplanation() {
               03
             </div>
             <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-foreground">
-              Get Picks Instantly
+              Win = Pay. Lose = Refund
             </h3>
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
-              Picks hit your phone the second they&apos;re posted. No delays, no
-              missed opportunities, no excuses.
+              Game ends. Results posted. If WIN → Sharp gets paid (minus 10% fee). If LOSS → your funds are instantly returned to your balance. You never pay for losing advice.
             </p>
           </div>
         </div>
