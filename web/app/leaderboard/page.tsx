@@ -1,10 +1,17 @@
 "use client";
 
 import { useState } from "react";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
-import { Users, Shield, Lock, Crown, Medal, Award, Star } from "lucide-react";
+import Link from "next/link";
+import {
+  TrendingUp,
+  Users,
+  Shield,
+  Crown,
+  Medal,
+  Award,
+  TrendingDown,
+} from "lucide-react";
 import { mockCommunities, type Community } from "@/lib/mock-data";
 
 type RankedCommunity = {
@@ -17,7 +24,6 @@ type RankedCommunity = {
 export default function LeaderboardPage() {
   const [timeframe, setTimeframe] = useState<"monthly" | "allTime">("monthly");
 
-  // Simple derived score: Sharp performance (70%) + normalized member size (30%)
   const ranked: RankedCommunity[] = mockCommunities
     .map((community, index) => ({
       community,
@@ -32,115 +38,70 @@ export default function LeaderboardPage() {
   const restOfLeaderboard = ranked.slice(3);
 
   return (
-    <main className="min-h-screen pt-16">
-      {/* Header */}
-      <section className="section">
-        <div className="section-container max-w-5xl">
-          <div className="text-center mb-6">
-            <h1 className="heading">Top Communities</h1>
-            <p className="subheading">
-              Ranked by Sharp performance and win rates. Top performers earn more.
+    <main className="min-h-screen relative">
+      <section className="relative section pt-24 pb-16 sm:pt-32 sm:pb-24">
+        <div className="section-container max-w-6xl">
+          {/* Header */}
+          <div className="mb-12">
+            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+              Leaderboard
+            </h1>
+            <p className="text-lg text-muted-foreground max-w-2xl">
+              Top-performing communities ranked by Sharp performance and win
+              rates.
             </p>
           </div>
-          {/* Timeframe Toggle (placeholder for future real data) */}
-          <div className="flex justify-center gap-2">
+
+          {/* Timeframe Toggle */}
+          <div className="flex gap-2 mb-12">
             <button
               onClick={() => setTimeframe("monthly")}
-              className={`px-4 py-2 rounded-lg text-sm font-bold transition-all ${
+              className={`px-6 py-2 rounded-lg text-sm font-semibold transition-all ${
                 timeframe === "monthly"
                   ? "bg-primary text-primary-foreground"
-                  : "bg-card text-foreground hover:bg-card/80 border border-border"
+                  : "bg-card text-muted-foreground hover:bg-card/80 border border-border"
               }`}
             >
               This Month
             </button>
             <button
               onClick={() => setTimeframe("allTime")}
-              className={`px-4 py-2 rounded-lg text-sm font-bold transition-all ${
+              className={`px-6 py-2 rounded-lg text-sm font-semibold transition-all ${
                 timeframe === "allTime"
                   ? "bg-primary text-primary-foreground"
-                  : "bg-card text-foreground hover:bg-card/80 border border-border"
+                  : "bg-card text-muted-foreground hover:bg-card/80 border border-border"
               }`}
             >
               All Time
             </button>
           </div>
-        </div>
-      </section>
 
-      {/* Top 3 Podium */}
-      <section className="section">
-        <div className="section-container max-w-6xl">
-          <div className="grid md:grid-cols-3 gap-6 mb-16">
-            {/* 2nd Place */}
-            {topThree[1] && (
-              <div className="md:order-1 md:mt-12">
-                <PodiumCard entry={topThree[1]} position={2} />
-              </div>
-            )}
-
-            {/* 1st Place */}
-            {topThree[0] && (
-              <div className="md:order-2">
-                <PodiumCard entry={topThree[0]} position={1} />
-              </div>
-            )}
-
-            {/* 3rd Place */}
-            {topThree[2] && (
-              <div className="md:order-3 md:mt-12">
-                <PodiumCard entry={topThree[2]} position={3} />
-              </div>
-            )}
-          </div>
+          {/* Top 3 Podium */}
+          {topThree.length > 0 && (
+            <div className="grid md:grid-cols-3 gap-6 mb-16">
+              {topThree[1] && (
+                <div className="md:mt-12">
+                  <PodiumCard entry={topThree[1]} position={2} />
+                </div>
+              )}
+              {topThree[0] && (
+                <div>
+                  <PodiumCard entry={topThree[0]} position={1} />
+                </div>
+              )}
+              {topThree[2] && (
+                <div className="md:mt-12">
+                  <PodiumCard entry={topThree[2]} position={3} />
+                </div>
+              )}
+            </div>
+          )}
 
           {/* Rest of Leaderboard */}
-          <div className="space-y-4">
+          <div className="space-y-3">
             {restOfLeaderboard.map((entry) => (
               <LeaderboardRow key={entry.community.id} entry={entry} />
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* How Rankings Work */}
-      <section className="section bg-card/50">
-        <div className="section-container max-w-5xl">
-          <h2 className="heading text-center mb-8">How Rankings Work</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="inline-flex p-4 bg-primary/10 dark:bg-primary/20 rounded-2xl mb-4">
-                <Shield className="h-8 w-8 text-primary" />
-              </div>
-              <h3 className="text-xl font-bold mb-2 text-foreground">
-                Performance Weight: 70%
-              </h3>
-              <p className="text-muted-foreground">
-                More winning Sharps → higher rank.
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="inline-flex p-4 bg-primary/10 dark:bg-primary/20 rounded-2xl mb-4">
-                <Users className="h-8 w-8 text-primary" />
-              </div>
-              <h3 className="text-xl font-bold mb-2 text-foreground">
-                Size Weight: 30%
-              </h3>
-              <p className="text-muted-foreground">
-                Member count adds signal (lightly normalized).
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="inline-flex p-4 bg-primary/10 dark:bg-primary/20 rounded-2xl mb-4">
-                <Star className="h-8 w-8 text-primary" />
-              </div>
-              <h3 className="text-xl font-bold mb-2 text-foreground">
-                Curation
-              </h3>
-              <p className="text-muted-foreground">
-                Featured communities are vetted by staff.
-              </p>
-            </div>
           </div>
         </div>
       </section>
@@ -157,172 +118,126 @@ function PodiumCard({
 }) {
   const { community } = entry;
 
-  const positionConfig = {
+  const config = {
     1: {
       icon: Crown,
-      color: "text-primary",
-      bgColor: "bg-primary/10 dark:bg-primary/20",
-      borderColor: "border-primary/30",
-      shadowColor: "shadow-primary/20",
       label: "Champion",
+      border: "border-primary/40",
+      bg: "bg-primary/5",
     },
     2: {
       icon: Medal,
-      color: "text-accent",
-      bgColor: "bg-accent/10 dark:bg-accent/20",
-      borderColor: "border-accent/30",
-      shadowColor: "shadow-accent/20",
       label: "Runner Up",
+      border: "border-muted-foreground/40",
+      bg: "bg-muted/20",
     },
     3: {
       icon: Award,
-      color: "text-muted-foreground",
-      bgColor: "bg-muted/50",
-      borderColor: "border-border",
-      shadowColor: "shadow-muted/20",
       label: "Third Place",
+      border: "border-border",
+      bg: "bg-card/50",
     },
-  } as const;
+  }[position];
 
-  const config = positionConfig[position as keyof typeof positionConfig];
-  const Icon = config.icon;
+  const Icon = config?.icon;
 
   return (
-    <Card
-      className={`bg-card border-2 ${config.borderColor} shadow-xl ${config.shadowColor} hover:shadow-2xl transition-all duration-300`}
+    <div
+      className={`p-6 rounded-xl border-2 ${config?.border} ${config?.bg} text-center`}
     >
-      <CardContent className="pt-6 text-center">
-        <div className={`inline-flex p-4 ${config.bgColor} rounded-full mb-4`}>
-          <Icon className={`h-12 w-12 ${config.color}`} />
-        </div>
-        <Badge
-          className={`mb-4 ${config.bgColor} ${config.color} ${config.borderColor}`}
-        >
-          {config.label}
-        </Badge>
-        <div className="flex justify-center mb-4">
-          <Image
-            src={community.avatar}
-            alt={community.name}
-            width={80}
-            height={80}
-            className="rounded-2xl object-cover aspect-square border border-border"
-          />
-        </div>
-        <h3 className="text-2xl font-bold mb-1 text-foreground">
-          {community.name}
-        </h3>
-        <div className="text-sm text-muted-foreground mb-2 flex items-center justify-center gap-3">
-          <span className="inline-flex items-center gap-1">
-            <Users className="h-3 w-3" /> {community.memberCount} members
-          </span>
-            <span className="inline-flex items-center gap-1">
-            <Shield className="h-3 w-3" /> {community.verifiedCapperCount}{" "}
-            Sharps
-          </span>
-          {community.isPrivate && <Lock className="h-3 w-3" />}
-        </div>
-      </CardContent>
-    </Card>
+      <div className="inline-flex p-3 bg-background/50 rounded-full mb-4">
+        {Icon && <Icon className="h-8 w-8 text-primary" />}
+      </div>
+      <div className="text-xs font-semibold text-muted-foreground mb-4">
+        {config?.label}
+      </div>
+      <div className="flex justify-center mb-4">
+        <Image
+          src={community.avatar}
+          alt={community.name}
+          width={64}
+          height={64}
+          className="rounded-xl object-cover aspect-square border border-border"
+        />
+      </div>
+      <h3 className="text-xl font-bold text-foreground mb-2">
+        {community.name}
+      </h3>
+      <div className="flex items-center justify-center gap-4 text-sm text-muted-foreground">
+        <span className="flex items-center gap-1">
+          <Users className="h-3 w-3" /> {community.memberCount}
+        </span>
+        <span className="flex items-center gap-1">
+          <Shield className="h-3 w-3" /> {community.verifiedCapperCount}
+        </span>
+      </div>
+    </div>
   );
 }
 
 function LeaderboardRow({ entry }: { entry: RankedCommunity }) {
   const { rank, previousRank, community } = entry;
   const rankChange = previousRank - rank;
-  const isUp = rankChange > 0;
-  const isDown = rankChange < 0;
-  const isStable = rankChange === 0;
 
   return (
-    <Card className="bg-card hover:shadow-lg transition-all duration-300 border border-border">
-      <CardContent className="py-4">
-        <div className="flex items-center gap-4">
-          {/* Rank */}
-          <div className="flex items-center gap-3 min-w-[80px]">
-            <div className="text-center">
-              <div className="text-2xl font-bold text-foreground">#{rank}</div>
-              <div className="flex items-center justify-center gap-1 text-xs">
-                {isUp && <span className="text-accent">+{rankChange}</span>}
-                {isDown && (
-                  <span className="text-destructive">{rankChange}</span>
-                )}
-                {isStable && <span className="text-muted-foreground">0</span>}
-              </div>
+    <Link
+      href={`/marketplace/${community.id}`}
+      className="block p-4 rounded-lg border border-border bg-card/50 hover:bg-card hover:border-primary/30 transition-all group"
+    >
+      <div className="flex items-center gap-6">
+        {/* Rank */}
+        <div className="w-12 text-center">
+          <div className="text-2xl font-bold text-foreground">#{rank}</div>
+          {rankChange !== 0 && (
+            <div className="flex items-center justify-center gap-1 text-xs mt-1">
+              {rankChange > 0 ? (
+                <span className="text-green-600 dark:text-green-500 flex items-center gap-0.5">
+                  <TrendingUp className="h-3 w-3" /> {rankChange}
+                </span>
+              ) : (
+                <span className="text-red-600 dark:text-red-500 flex items-center gap-0.5">
+                  <TrendingDown className="h-3 w-3" /> {Math.abs(rankChange)}
+                </span>
+              )}
             </div>
-          </div>
+          )}
+        </div>
 
-          {/* Community Info */}
-          <div className="flex items-center gap-3 flex-1 min-w-0">
-            <Image
-              src={community.avatar}
-              alt={community.name}
-              width={48}
-              height={48}
-              className="rounded-2xl object-cover aspect-square border border-border"
-            />
-            <div className="min-w-0 flex-1">
-              <div className="flex items-center gap-2 mb-1">
-                <h3 className="font-bold text-foreground truncate">
-                  {community.name}
-                </h3>
-                {community.isPrivate && (
-                  <Lock className="h-4 w-4 text-muted-foreground" />
-                )}
-              </div>
-              <p className="text-sm text-muted-foreground truncate">
-                {community.description}
-              </p>
-            </div>
-          </div>
-
-          {/* Stats - Hidden on mobile */}
-          <div className="hidden md:flex items-center gap-6">
-            <div className="text-center">
-              <p className="text-xs text-muted-foreground mb-1">Members</p>
-              <p className="text-lg font-bold text-foreground">
-                {community.memberCount}
-              </p>
-            </div>
-            <div className="text-center">
-              <p className="text-xs text-muted-foreground mb-1">Sharps</p>
-              <p className="text-lg font-bold text-primary">
-                {community.verifiedCapperCount}
-              </p>
-            </div>
-            <div className="text-center">
-              <p className="text-xs text-muted-foreground mb-1">Access</p>
-              <p className="text-lg font-bold text-foreground">
-                {community.isPrivate ? "Invite" : "Public"}
-              </p>
-            </div>
+        {/* Community Info */}
+        <div className="flex items-center gap-4 flex-1 min-w-0">
+          <Image
+            src={community.avatar}
+            alt={community.name}
+            width={48}
+            height={48}
+            className="rounded-lg object-cover aspect-square border border-border"
+          />
+          <div className="min-w-0 flex-1">
+            <h3 className="font-bold text-foreground truncate group-hover:text-primary transition-colors">
+              {community.name}
+            </h3>
+            <p className="text-sm text-muted-foreground truncate">
+              {community.description}
+            </p>
           </div>
         </div>
 
-        {/* Mobile Stats */}
-        <div className="md:hidden mt-4 pt-4 border-t border-border">
-          <div className="grid grid-cols-3 gap-2 text-center">
-            <div>
-              <p className="text-xs text-muted-foreground mb-1">Members</p>
-              <p className="text-sm font-bold text-foreground">
-                {community.memberCount}
-              </p>
-            </div>
-            <div>
-              <p className="text-xs text-muted-foreground mb-1">Sharps</p>
-              <p className="text-sm font-bold text-primary">
-                {community.verifiedCapperCount}
-              </p>
-            </div>
-            <div>
-              <p className="text-xs text-muted-foreground mb-1">Access</p>
-              <p className="text-sm font-bold text-foreground">
-                {community.isPrivate ? "Invite" : "Public"}
-              </p>
-            </div>
+        {/* Stats */}
+        <div className="hidden md:flex items-center gap-8">
+          <div className="text-center">
+            <p className="text-xs text-muted-foreground mb-1">Members</p>
+            <p className="text-lg font-semibold text-foreground">
+              {community.memberCount}
+            </p>
+          </div>
+          <div className="text-center">
+            <p className="text-xs text-muted-foreground mb-1">Sharps</p>
+            <p className="text-lg font-semibold text-primary">
+              {community.verifiedCapperCount}
+            </p>
           </div>
         </div>
-      </CardContent>
-    </Card>
+      </div>
+    </Link>
   );
 }
