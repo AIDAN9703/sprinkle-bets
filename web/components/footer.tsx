@@ -20,7 +20,7 @@ export function Footer() {
                 </span>
               </Link>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                The world's first performance-based sports betting creator
+                The world&apos;s first performance-based sports betting creator
                 marketplace.
               </p>
             </div>
