@@ -16,20 +16,20 @@ import ProductExample from "./ProductExample";
 
 export default function Hero() {
   return (
-    <section className="relative section pb-32 sm:pb-40 overflow-hidden min-h-screen flex items-center">
+    <section className="relative section pb-16 sm:pb-24 md:pb-32 lg:pb-40 overflow-hidden min-h-[85vh] sm:min-h-screen flex items-center">
       {/* Space Background */}
       <SpaceBackground />
 
       {/* Content */}
       <div className="section-container relative z-10 w-full">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 md:gap-10 lg:gap-12 items-center">
           {/* Left Column - Text Content */}
-          <div className="text-left max-w-2xl">
+          <div className="text-left max-w-2xl w-full order-2 lg:order-1">
             <h1
-              className="leading-tight tracking-tight mb-4 sm:mb-6 text-foreground"
+              className="leading-tight tracking-tight mb-4 sm:mb-5 md:mb-6 text-foreground"
               style={{
                 fontFamily: "var(--font-bebas-neue), system-ui, sans-serif",
-                fontSize: "clamp(2.5rem, 6vw, 5.5rem)",
+                fontSize: "clamp(2.25rem, 8vw, 5.5rem)",
                 lineHeight: "0.95",
                 letterSpacing: "0.02em",
               }}
@@ -37,85 +37,85 @@ export default function Hero() {
               Performance <span className="text-primary">Pays</span> Here.
             </h1>
 
-            <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-8 sm:mb-10 leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground mb-6 sm:mb-8 md:mb-10 leading-relaxed max-w-xl">
               The world&apos;s first performance-based sports betting
               marketplace where expert bettors only earn when their picks win.
               Aligned incentives. Transparent results. Real accountability.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mb-12">
-              <Link href="/register">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 sm:mb-10 md:mb-12">
+              <Link href="/register" className="w-full sm:w-auto">
                 <Button
                   size="lg"
-                  className="cta-primary w-full sm:w-auto text-lg sm:text-xl px-8 sm:px-12 py-6 sm:py-8"
+                  className="cta-primary w-full sm:w-auto text-base sm:text-lg md:text-xl px-6 sm:px-8 md:px-12 py-5 sm:py-6 md:py-8 h-auto"
                 >
                   Get Started
-                  <ArrowRight className="ml-2 h-5 w-5 sm:h-6 sm:w-6" />
+                  <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" />
                 </Button>
               </Link>
-              <Link href="/marketplace">
+              <Link href="/marketplace" className="w-full sm:w-auto">
                 <Button
                   size="lg"
                   variant="outline"
-                  className="cta-secondary w-full sm:w-auto text-lg sm:text-xl px-8 sm:px-12 py-6 sm:py-8"
+                  className="cta-secondary w-full sm:w-auto text-base sm:text-lg md:text-xl px-6 sm:px-8 md:px-12 py-5 sm:py-6 md:py-8 h-auto"
                 >
                   Browse Sharps
                 </Button>
               </Link>
             </div>
 
-            {/* Horizontal Ticker */}
-            <div className="relative overflow-hidden py-4">
+            {/* Horizontal Ticker - Mobile Optimized */}
+            <div className="relative overflow-hidden py-3 sm:py-4">
               <div className="flex animate-scroll whitespace-nowrap">
-                <div className="flex gap-6 sm:gap-12 px-6 text-xs sm:text-sm font-medium text-muted-foreground">
-                  <div className="flex items-center gap-2">
-                    <Shield className="h-4 w-4 text-primary" />
-                    <span>Win-Tied Payouts</span>
+                <div className="flex gap-4 sm:gap-6 md:gap-12 px-4 sm:px-6 text-[10px] sm:text-xs md:text-sm font-medium text-muted-foreground">
+                  <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+                    <Shield className="h-3 w-3 sm:h-4 sm:w-4 text-primary shrink-0" />
+                    <span className="whitespace-nowrap">Win-Tied Payouts</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-primary" />
-                    <span>Escrow Protection</span>
+                  <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+                    <CheckCircle2 className="h-3 w-3 sm:h-4 sm:w-4 text-primary shrink-0" />
+                    <span className="whitespace-nowrap">Escrow Protection</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Lock className="h-4 w-4 text-primary" />
-                    <span>Funds Returned on Loss</span>
+                  <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+                    <Lock className="h-3 w-3 sm:h-4 sm:w-4 text-primary shrink-0" />
+                    <span className="whitespace-nowrap">Funds Returned</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <TrendingUp className="h-4 w-4 text-primary" />
-                    <span>Performance-Based Earnings</span>
+                  <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+                    <TrendingUp className="h-3 w-3 sm:h-4 sm:w-4 text-primary shrink-0" />
+                    <span className="whitespace-nowrap">Performance-Based</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <BarChart3 className="h-4 w-4 text-primary" />
-                    <span>Transparent Win Rates</span>
+                  <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+                    <BarChart3 className="h-3 w-3 sm:h-4 sm:w-4 text-primary shrink-0" />
+                    <span className="whitespace-nowrap">Transparent Rates</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Zap className="h-4 w-4 text-primary" />
-                    <span>Instant Pick Delivery</span>
+                  <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+                    <Zap className="h-3 w-3 sm:h-4 sm:w-4 text-primary shrink-0" />
+                    <span className="whitespace-nowrap">Instant Delivery</span>
                   </div>
                   {/* Duplicate for seamless loop */}
-                  <div className="flex items-center gap-2">
-                    <Shield className="h-4 w-4 text-primary" />
-                    <span>Win-Tied Payouts</span>
+                  <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+                    <Shield className="h-3 w-3 sm:h-4 sm:w-4 text-primary shrink-0" />
+                    <span className="whitespace-nowrap">Win-Tied Payouts</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-primary" />
-                    <span>Escrow Protection</span>
+                  <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+                    <CheckCircle2 className="h-3 w-3 sm:h-4 sm:w-4 text-primary shrink-0" />
+                    <span className="whitespace-nowrap">Escrow Protection</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Lock className="h-4 w-4 text-primary" />
-                    <span>Funds Returned on Loss</span>
+                  <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+                    <Lock className="h-3 w-3 sm:h-4 sm:w-4 text-primary shrink-0" />
+                    <span className="whitespace-nowrap">Funds Returned</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <TrendingUp className="h-4 w-4 text-primary" />
-                    <span>Performance-Based Earnings</span>
+                  <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+                    <TrendingUp className="h-3 w-3 sm:h-4 sm:w-4 text-primary shrink-0" />
+                    <span className="whitespace-nowrap">Performance-Based</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <BarChart3 className="h-4 w-4 text-primary" />
-                    <span>Transparent Win Rates</span>
+                  <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+                    <BarChart3 className="h-3 w-3 sm:h-4 sm:w-4 text-primary shrink-0" />
+                    <span className="whitespace-nowrap">Transparent Rates</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Zap className="h-4 w-4 text-primary" />
-                    <span>Instant Pick Delivery</span>
+                  <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+                    <Zap className="h-3 w-3 sm:h-4 sm:w-4 text-primary shrink-0" />
+                    <span className="whitespace-nowrap">Instant Delivery</span>
                   </div>
                 </div>
               </div>
@@ -123,8 +123,10 @@ export default function Hero() {
           </div>
 
           {/* Right Column - Product Example */}
-          <div className="relative h-[500px] lg:h-[600px] flex items-center justify-center">
-            <ProductExample />
+          <div className="relative w-full order-1 lg:order-2 flex items-center justify-center lg:h-[600px]">
+            <div className="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-md">
+              <ProductExample />
+            </div>
           </div>
         </div>
       </div>

@@ -100,11 +100,11 @@ const samplePicks = [
 
 function PickCard({ pick }: { pick: (typeof samplePicks)[0] }) {
   return (
-    <div className="bg-background rounded-xl shadow-lg overflow-hidden border border-border mb-3">
+    <div className="bg-background rounded-lg sm:rounded-xl shadow-lg overflow-hidden border border-border mb-2 sm:mb-3">
       {/* Header */}
-      <div className="p-3 border-b border-border">
-        <div className="flex items-center gap-2.5">
-          <div className="relative w-9 h-9 rounded-full overflow-hidden border-2 border-primary/30 shrink-0">
+      <div className="p-2.5 sm:p-3 border-b border-border">
+        <div className="flex items-center gap-2 sm:gap-2.5">
+          <div className="relative w-8 h-8 sm:w-9 sm:h-9 rounded-full overflow-hidden border-2 border-primary/30 shrink-0">
             <Image
               src={pick.avatar}
               alt={pick.username}
@@ -113,18 +113,18 @@ function PickCard({ pick }: { pick: (typeof samplePicks)[0] }) {
             />
           </div>
           <div className="flex-1 min-w-0">
-            <div className="flex items-center gap-1.5 mb-0.5">
-              <span className="font-bold text-foreground text-xs truncate">
+            <div className="flex items-center gap-1 sm:gap-1.5 mb-0.5">
+              <span className="font-bold text-foreground text-[11px] sm:text-xs truncate">
                 {pick.username}
               </span>
               <div className="relative shrink-0">
-                <div className="relative w-3.5 h-3.5">
+                <div className="relative w-3 h-3 sm:w-3.5 sm:h-3.5">
                   <BadgeCheck
-                    className="h-3.5 w-3.5 text-primary fill-primary absolute inset-0"
+                    className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-primary fill-primary absolute inset-0"
                     strokeWidth={2.5}
                   />
                   <svg
-                    className="absolute inset-0 w-2 h-2 m-auto"
+                    className="absolute inset-0 w-1.5 h-1.5 sm:w-2 sm:h-2 m-auto"
                     viewBox="0 0 24 24"
                     fill="none"
                   >
@@ -140,7 +140,7 @@ function PickCard({ pick }: { pick: (typeof samplePicks)[0] }) {
                 </div>
               </div>
             </div>
-            <div className="flex items-center gap-1.5 text-[10px]">
+            <div className="flex items-center gap-1 sm:gap-1.5 text-[9px] sm:text-[10px]">
               <span className="text-muted-foreground font-medium">
                 {pick.monthlyRecord} This Month
               </span>
@@ -149,15 +149,15 @@ function PickCard({ pick }: { pick: (typeof samplePicks)[0] }) {
                 className={`font-bold flex items-center gap-0.5 ${pick.isPositive ? "text-green-600 dark:text-green-500" : "text-red-600 dark:text-red-500"}`}
               >
                 {pick.isPositive ? (
-                  <TrendingUp className="h-2.5 w-2.5" />
+                  <TrendingUp className="h-2 w-2 sm:h-2.5 sm:w-2.5" />
                 ) : (
-                  <TrendingDown className="h-2.5 w-2.5" />
+                  <TrendingDown className="h-2 w-2 sm:h-2.5 sm:w-2.5" />
                 )}
                 {pick.units}u
               </span>
             </div>
           </div>
-          <div className="px-2 py-0.5 bg-primary/10 rounded text-[10px] font-bold text-primary shrink-0 border border-primary/20">
+          <div className="px-1.5 sm:px-2 py-0.5 bg-primary/10 rounded text-[9px] sm:text-[10px] font-bold text-primary shrink-0 border border-primary/20">
             {pick.sport}
           </div>
         </div>
@@ -166,23 +166,23 @@ function PickCard({ pick }: { pick: (typeof samplePicks)[0] }) {
       {/* Content */}
       <div className="relative">
         {/* Visible Preview Info */}
-        <div className="p-3 border-b border-border">
-          <div className="flex items-center gap-1.5 text-[10px] text-muted-foreground mb-1.5">
-            <Clock className="h-2.5 w-2.5" />
+        <div className="p-2.5 sm:p-3 border-b border-border">
+          <div className="flex items-center gap-1 sm:gap-1.5 text-[9px] sm:text-[10px] text-muted-foreground mb-1 sm:mb-1.5">
+            <Clock className="h-2 w-2 sm:h-2.5 sm:w-2.5" />
             <span>{pick.posted}</span>
             <span>•</span>
-            <div className="flex items-center gap-1">
-              <Users className="h-2.5 w-2.5" />
+            <div className="flex items-center gap-0.5 sm:gap-1">
+              <Users className="h-2 w-2 sm:h-2.5 sm:w-2.5" />
               <span className="font-semibold">{pick.unlocks}</span>
               <span>unlocks</span>
             </div>
           </div>
 
           <div>
-            <div className="text-sm font-bold text-foreground mb-0.5">
+            <div className="text-xs sm:text-sm font-bold text-foreground mb-0.5">
               {pick.game}
             </div>
-            <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+            <div className="flex items-center gap-1 sm:gap-1.5 text-[10px] sm:text-xs text-muted-foreground">
               <span className="font-semibold text-foreground">Odds:</span>
               <span className="font-bold text-primary">{pick.odds}</span>
               <span>•</span>
@@ -197,20 +197,20 @@ function PickCard({ pick }: { pick: (typeof samplePicks)[0] }) {
         </div>
 
         {/* Blurred Content Area */}
-        <div className="relative h-24 overflow-hidden">
+        <div className="relative h-20 sm:h-24 overflow-hidden">
           {/* Content with blur filter applied */}
-          <div className="p-3 blur-sm">
-            <div className="space-y-2">
-              <div className="h-2.5 bg-foreground/80 rounded w-3/4"></div>
-              <div className="h-2.5 bg-foreground/80 rounded w-full"></div>
-              <div className="h-2.5 bg-foreground/80 rounded w-5/6"></div>
-              <div className="mt-3 p-2.5 bg-primary/40 rounded-lg border-2 border-primary/60">
-                <div className="text-sm font-bold text-primary mb-1.5">
+          <div className="p-2.5 sm:p-3 blur-sm">
+            <div className="space-y-1.5 sm:space-y-2">
+              <div className="h-2 sm:h-2.5 bg-foreground/80 rounded w-3/4"></div>
+              <div className="h-2 sm:h-2.5 bg-foreground/80 rounded w-full"></div>
+              <div className="h-2 sm:h-2.5 bg-foreground/80 rounded w-5/6"></div>
+              <div className="mt-2 sm:mt-3 p-2 sm:p-2.5 bg-primary/40 rounded-lg border-2 border-primary/60">
+                <div className="text-xs sm:text-sm font-bold text-primary mb-1 sm:mb-1.5">
                   {pick.game.split(" ")[0]} ML - Analysis
                 </div>
-                <div className="text-xs text-foreground/90 space-y-1">
-                  <div className="h-1.5 bg-foreground/70 rounded w-full"></div>
-                  <div className="h-1.5 bg-foreground/70 rounded w-4/5"></div>
+                <div className="text-[10px] sm:text-xs text-foreground/90 space-y-0.5 sm:space-y-1">
+                  <div className="h-1 sm:h-1.5 bg-foreground/70 rounded w-full"></div>
+                  <div className="h-1 sm:h-1.5 bg-foreground/70 rounded w-4/5"></div>
                 </div>
               </div>
             </div>
@@ -218,12 +218,12 @@ function PickCard({ pick }: { pick: (typeof samplePicks)[0] }) {
 
           {/* Lock overlay - no blur, just semi-transparent background */}
           <div className="absolute inset-0 flex items-center justify-center bg-background/75 dark:bg-background/80">
-            <div className="text-center px-3">
-              <Lock className="h-8 w-8 text-primary/80 mx-auto mb-1.5" />
-              <div className="text-xs font-semibold text-foreground/90 mb-0.5">
+            <div className="text-center px-2 sm:px-3">
+              <Lock className="h-6 w-6 sm:h-8 sm:w-8 text-primary/80 mx-auto mb-1 sm:mb-1.5" />
+              <div className="text-[10px] sm:text-xs font-semibold text-foreground/90 mb-0.5">
                 Locked Pick
               </div>
-              <div className="text-[10px] text-muted-foreground">
+              <div className="text-[9px] sm:text-[10px] text-muted-foreground">
                 Unlock -{" "}
                 <span className="font-bold text-primary">{pick.price}</span>
               </div>
@@ -232,8 +232,8 @@ function PickCard({ pick }: { pick: (typeof samplePicks)[0] }) {
         </div>
 
         {/* Disclaimer */}
-        <div className="px-3 py-2 bg-muted/50 border-t border-border">
-          <p className="text-[9px] text-muted-foreground leading-tight">
+        <div className="px-2.5 sm:px-3 py-1.5 sm:py-2 bg-muted/50 border-t border-border">
+          <p className="text-[8px] sm:text-[9px] text-muted-foreground leading-tight">
             Funds will be awarded to{" "}
             <span className="font-semibold text-foreground">
               {pick.username}
@@ -254,15 +254,15 @@ export default function ProductExample() {
   return (
     <div className="relative w-full max-w-md mx-auto">
       {/* Feed Container */}
-      <div className="bg-background rounded-2xl shadow-2xl overflow-hidden border border-border h-[500px] lg:h-[600px] relative">
+      <div className="bg-background rounded-2xl shadow-2xl overflow-hidden border border-border h-[400px] sm:h-[450px] md:h-[500px] lg:h-[600px] relative">
         {/* Gradient overlays for fade effect */}
-        <div className="absolute top-0 left-0 right-0 h-16 bg-linear-to-b from-background to-transparent z-20 pointer-events-none" />
-        <div className="absolute bottom-0 left-0 right-0 h-16 bg-linear-to-t from-background to-transparent z-20 pointer-events-none" />
+        <div className="absolute top-0 left-0 right-0 h-12 sm:h-16 bg-linear-to-b from-background to-transparent z-20 pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 h-12 sm:h-16 bg-linear-to-t from-background to-transparent z-20 pointer-events-none" />
 
         {/* Scrolling Feed */}
         <div className="h-full overflow-hidden">
           <div className="animate-feed-scroll">
-            <div className="p-4 space-y-3">
+            <div className="p-3 sm:p-4 space-y-2 sm:space-y-3">
               {duplicatedPicks.map((pick, index) => (
                 <PickCard key={index} pick={pick} />
               ))}
@@ -272,8 +272,8 @@ export default function ProductExample() {
       </div>
 
       {/* Callout Text */}
-      <div className="mt-6 text-center">
-        <p className="text-sm text-muted-foreground max-w-md mx-auto">
+      <div className="mt-4 sm:mt-6 text-center px-4">
+        <p className="text-xs sm:text-sm text-muted-foreground max-w-md mx-auto">
           <span className="font-semibold text-foreground">
             Never pay for losing advice.
           </span>{" "}
