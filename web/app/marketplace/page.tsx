@@ -23,49 +23,48 @@ export default function MarketplacePage({ searchParams }: PageProps) {
   const minWinRate = searchParams.minWinRate || "0";
   const minMembers = searchParams.minMembers || "0";
 
-  // Filter communities
-  let filtered = mockCommunities.filter((community) => {
-    const matchesSearch =
-      community.name.toLowerCase().includes(search.toLowerCase()) ||
-      community.description.toLowerCase().includes(search.toLowerCase());
-    const matchesSport =
-      selectedSport === "All Sports" ||
-      community.sports.includes(selectedSport);
-    const matchesCLV =
-      !community.avgStats || community.avgStats.avgCLV >= parseFloat(minCLV);
-    const matchesWinRate =
-      !community.avgStats ||
-      community.avgStats.avgWinRate >= parseFloat(minWinRate);
-    const matchesMembers = community.memberCount >= parseInt(minMembers);
+  // Filter and sort communities
+  const filtered = mockCommunities
+    .filter((community) => {
+      const matchesSearch =
+        community.name.toLowerCase().includes(search.toLowerCase()) ||
+        community.description.toLowerCase().includes(search.toLowerCase());
+      const matchesSport =
+        selectedSport === "All Sports" ||
+        community.sports.includes(selectedSport);
+      const matchesCLV =
+        !community.avgStats || community.avgStats.avgCLV >= parseFloat(minCLV);
+      const matchesWinRate =
+        !community.avgStats ||
+        community.avgStats.avgWinRate >= parseFloat(minWinRate);
+      const matchesMembers = community.memberCount >= parseInt(minMembers);
 
-    return (
-      matchesSearch &&
-      matchesSport &&
-      matchesCLV &&
-      matchesWinRate &&
-      matchesMembers
-    );
-  });
-
-  // Sort communities
-  filtered.sort((a, b) => {
-    switch (sortBy) {
-      case "featured":
-        return b.featured ? 1 : -1;
-      case "clv":
-        return (b.avgStats?.avgCLV || 0) - (a.avgStats?.avgCLV || 0);
-      case "winrate":
-        return (b.avgStats?.avgWinRate || 0) - (a.avgStats?.avgWinRate || 0);
-      case "roi":
-        return (b.avgStats?.avgROI || 0) - (a.avgStats?.avgROI || 0);
-      case "members":
-        return b.memberCount - a.memberCount;
-      case "sharps":
-        return b.verifiedCapperCount - a.verifiedCapperCount;
-      default:
-        return 0;
-    }
-  });
+      return (
+        matchesSearch &&
+        matchesSport &&
+        matchesCLV &&
+        matchesWinRate &&
+        matchesMembers
+      );
+    })
+    .sort((a, b) => {
+      switch (sortBy) {
+        case "featured":
+          return b.featured ? 1 : -1;
+        case "clv":
+          return (b.avgStats?.avgCLV || 0) - (a.avgStats?.avgCLV || 0);
+        case "winrate":
+          return (b.avgStats?.avgWinRate || 0) - (a.avgStats?.avgWinRate || 0);
+        case "roi":
+          return (b.avgStats?.avgROI || 0) - (a.avgStats?.avgROI || 0);
+        case "members":
+          return b.memberCount - a.memberCount;
+        case "sharps":
+          return b.verifiedCapperCount - a.verifiedCapperCount;
+        default:
+          return 0;
+      }
+    });
 
   return (
     <main className="min-h-screen bg-background">
