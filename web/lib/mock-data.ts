@@ -319,6 +319,13 @@ export interface Community {
   sports: string[];
   isPrivate: boolean;
   featured: boolean;
+  // Aggregated stats from all Sharps in community
+  avgStats?: {
+    avgCLV: number; // Average closing line value
+    avgWinRate: number; // Average win rate %
+    avgROI: number; // Average return on investment %
+    monthlyRecord: string; // e.g. "156-89" combined monthly record
+  };
 }
 
 export const mockCommunities: Community[] = [
@@ -332,6 +339,12 @@ export const mockCommunities: Community[] = [
     sports: ['NFL', 'NBA', 'NHL'],
     isPrivate: true,
     featured: true,
+    avgStats: {
+      avgCLV: 2.8,
+      avgWinRate: 58.2,
+      avgROI: 9.1,
+      monthlyRecord: '89-54',
+    },
   },
   {
     id: '2',
@@ -343,6 +356,12 @@ export const mockCommunities: Community[] = [
     sports: ['NBA', 'NFL'],
     isPrivate: false,
     featured: true,
+    avgStats: {
+      avgCLV: 2.1,
+      avgWinRate: 56.4,
+      avgROI: 7.8,
+      monthlyRecord: '234-181',
+    },
   },
   {
     id: '3',
@@ -354,6 +373,12 @@ export const mockCommunities: Community[] = [
     sports: ['NBA', 'NFL', 'MLB'],
     isPrivate: false,
     featured: false,
+    avgStats: {
+      avgCLV: 1.6,
+      avgWinRate: 54.8,
+      avgROI: 6.2,
+      monthlyRecord: '67-55',
+    },
   },
   {
     id: '4',
@@ -365,6 +390,12 @@ export const mockCommunities: Community[] = [
     sports: ['NFL'],
     isPrivate: true,
     featured: false,
+    avgStats: {
+      avgCLV: 3.2,
+      avgWinRate: 52.1,
+      avgROI: 11.4,
+      monthlyRecord: '42-39',
+    },
   },
   {
     id: '5',
@@ -376,6 +407,12 @@ export const mockCommunities: Community[] = [
     sports: ['NBA', 'MLB', 'NHL', 'Soccer'],
     isPrivate: false,
     featured: true,
+    avgStats: {
+      avgCLV: 1.9,
+      avgWinRate: 55.7,
+      avgROI: 7.1,
+      monthlyRecord: '98-78',
+    },
   },
   {
     id: '6',
@@ -387,6 +424,12 @@ export const mockCommunities: Community[] = [
     sports: ['College Football', 'College Basketball'],
     isPrivate: false,
     featured: false,
+    avgStats: {
+      avgCLV: 1.4,
+      avgWinRate: 53.9,
+      avgROI: 5.8,
+      monthlyRecord: '51-44',
+    },
   },
   {
     id: '7',
@@ -398,17 +441,29 @@ export const mockCommunities: Community[] = [
     sports: ['Soccer'],
     isPrivate: false,
     featured: false,
+    avgStats: {
+      avgCLV: 2.3,
+      avgWinRate: 57.1,
+      avgROI: 8.3,
+      monthlyRecord: '156-117',
+    },
   },
   {
     id: '8',
     name: 'Proven Parlays',
     avatar: '/images/people-cheering.png',
-    description: 'Don’t get tricked by fake parlay artists. Only proven long-term winners allowed.',
+    description: "Don't get tricked by fake parlay artists. Only proven long-term winners allowed.",
     memberCount: 91,
     verifiedCapperCount: 1,
     sports: ['NBA', 'NFL', 'MLB'],
     isPrivate: true,
     featured: false,
+    avgStats: {
+      avgCLV: 1.2,
+      avgWinRate: 54.2,
+      avgROI: 6.4,
+      monthlyRecord: '28-24',
+    },
   },
 ];
 
