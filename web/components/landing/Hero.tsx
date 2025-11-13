@@ -29,7 +29,7 @@ export default function Hero() {
               className="leading-tight tracking-tight mb-4 sm:mb-5 md:mb-6 text-foreground"
               style={{
                 fontFamily: "var(--font-bebas-neue), system-ui, sans-serif",
-                fontSize: "clamp(2.25rem, 8vw, 5.5rem)",
+                fontSize: "clamp(4rem, 8vw, 6rem)",
                 lineHeight: "0.95",
                 letterSpacing: "0.02em",
               }}
