@@ -61,10 +61,10 @@
    ============================================ */
 @layer base {
   :root {
-    /* Brand Colors - Lime Energy + Black/Chrome */
-    --brand-lime: 74 100% 62%;           /* #D6FF3F */
-    --brand-lime-dark: 74 80% 48%;
-    --brand-lime-light: 74 100% 75%;
+    /* Brand Colors - Money Green + Black/Chrome */
+    --brand-green: 160 85% 45%;          /* #00D084 - Money green */
+    --brand-green-dark: 160 85% 35%;     /* Darker money green */
+    --brand-green-light: 160 85% 55%;    /* Lighter money green */
     --brand-black: 0 0% 8%;              /* #141414 - Deep black */
     
     /* Light Mode Colors */
@@ -77,8 +77,8 @@
     --popover: 0 0% 100%;                /* White */
     --popover-foreground: 0 0% 8%;       /* Near black */
     
-    --primary: var(--brand-lime);
-    --primary-foreground: 0 0% 8%;       /* Dark text on lime */
+    --primary: var(--brand-green);
+    --primary-foreground: 0 0% 8%;       /* Dark text on green */
     
     --secondary: 0 0% 96%;               /* Light gray */
     --secondary-foreground: 0 0% 8%;     /* Near black */
@@ -86,22 +86,22 @@
     --muted: 0 0% 96%;                   /* Light gray */
     --muted-foreground: 0 0% 45%;        /* Medium gray */
     
-    --accent: var(--brand-lime-light);
-    --accent-foreground: 0 0% 98%;       /* White text */
+    --accent: var(--brand-green-light);
+    --accent-foreground: 0 0% 8%;        /* Dark text on light green */
     
     --destructive: 0 84% 60%;            /* Red for errors */
     --destructive-foreground: 0 0% 98%;  /* White text */
     
     --border: 0 0% 90%;                  /* Light border */
     --input: 0 0% 90%;                   /* Light input border */
-    --ring: var(--brand-lime);
+    --ring: var(--brand-green);
     
     /* Chart Colors */
-    --chart-1: var(--brand-lime);
+    --chart-1: var(--brand-green);
     --chart-2: 0 0% 8%;                  /* Black */
-    --chart-3: var(--brand-lime-dark);
+    --chart-3: var(--brand-green-dark);
     --chart-4: 0 0% 60%;                 /* Gray */
-    --chart-5: var(--brand-lime-light);
+    --chart-5: var(--brand-green-light);
     
     /* Border Radius */
     --radius: 0.5rem;
@@ -118,8 +118,8 @@
     --popover: 0 0% 10%;                 /* Dark gray */
     --popover-foreground: 0 0% 98%;      /* Near white */
     
-    --primary: var(--brand-lime);
-    --primary-foreground: 0 0% 8%;       /* Dark text on lime */
+    --primary: var(--brand-green);
+    --primary-foreground: 0 0% 8%;       /* Dark text on green */
     
     --secondary: 0 0% 15%;               /* Dark gray */
     --secondary-foreground: 0 0% 98%;    /* Near white */
@@ -127,22 +127,22 @@
     --muted: 0 0% 15%;                   /* Dark gray */
     --muted-foreground: 0 0% 65%;        /* Light gray */
     
-    --accent: var(--brand-lime-light);
-    --accent-foreground: 0 0% 98%;       /* White text */
+    --accent: var(--brand-green-light);
+    --accent-foreground: 0 0% 8%;        /* Dark text on light green */
     
     --destructive: 0 84% 60%;            /* Red for errors */
     --destructive-foreground: 0 0% 98%;  /* White text */
     
     --border: 0 0% 20%;                  /* Dark border */
     --input: 0 0% 20%;                   /* Dark input border */
-    --ring: var(--brand-lime);
+    --ring: var(--brand-green);
     
     /* Chart Colors - Dark Mode */
-    --chart-1: var(--brand-lime);
+    --chart-1: var(--brand-green);
     --chart-2: 0 0% 90%;                 /* Light gray */
-    --chart-3: var(--brand-lime-dark);
+    --chart-3: var(--brand-green-dark);
     --chart-4: 0 0% 40%;                 /* Medium gray */
-    --chart-5: var(--brand-lime-light);
+    --chart-5: var(--brand-green-light);
   }
 }
 
@@ -177,7 +177,7 @@
 }
 
 @utility text-brand-gradient {
-  background: linear-gradient(135deg, #D6FF3F 0%, #A8CC32 100%);
+  background: linear-gradient(135deg, #00D084 0%, #00A266 100%);
   @apply bg-clip-text text-transparent;
 }
 
@@ -200,19 +200,19 @@
   background: rgba(20, 20, 20, 0.7);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border: 1px solid rgba(214, 255, 63, 0.2);
+  border: 1px solid rgba(0, 208, 132, 0.2);
 }
 
 @utility glass-lime {
   background: linear-gradient(
     135deg,
-    rgba(214, 255, 63, 0.15) 0%,
+    rgba(0, 208, 132, 0.15) 0%,
     rgba(255, 255, 255, 0.9) 100%
   );
   backdrop-filter: blur(25px) saturate(180%);
   -webkit-backdrop-filter: blur(25px) saturate(180%);
-  border: 1px solid rgba(214, 255, 63, 0.3);
-  box-shadow: 0 8px 32px 0 rgba(214, 255, 63, 0.15);
+  border: 1px solid rgba(0, 208, 132, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(0, 208, 132, 0.15);
 }
 
 @utility glass-card {
@@ -222,21 +222,21 @@
   border: 1px solid rgba(255, 255, 255, 0.4);
   box-shadow:
     0 8px 32px 0 rgba(0, 0, 0, 0.05),
-    0 0 0 1px rgba(214, 255, 63, 0.1) inset;
+    0 0 0 1px rgba(0, 208, 132, 0.1) inset;
 }
 
 /* Glow Effects */
 @utility glow-lime {
   box-shadow:
-    0 0 20px rgba(214, 255, 63, 0.4),
-    0 0 40px rgba(214, 255, 63, 0.2);
+    0 0 20px rgba(0, 208, 132, 0.4),
+    0 0 40px rgba(0, 208, 132, 0.2);
 }
 
 @utility glow-lime-hover {
   &:hover {
     box-shadow:
-      0 0 30px rgba(214, 255, 63, 0.6),
-      0 0 60px rgba(214, 255, 63, 0.3);
+      0 0 30px rgba(0, 208, 132, 0.6),
+      0 0 60px rgba(0, 208, 132, 0.3);
     transition: all 0.3s ease;
   }
 }
@@ -259,8 +259,8 @@
 @utility hero-orb-lime {
   background: radial-gradient(
     circle,
-    rgba(214, 255, 63, 0.4) 0%,
-    rgba(214, 255, 63, 0) 70%
+    rgba(0, 208, 132, 0.4) 0%,
+    rgba(0, 208, 132, 0) 70%
   );
 }
 
@@ -316,6 +316,10 @@
 
   [data-variant="outline"]:hover::before {
     width: 100%;
+  }
+
+  [data-variant="outline"]:hover {
+    color: hsl(var(--primary-foreground));
   }
 
   [data-variant="outline"] > span {

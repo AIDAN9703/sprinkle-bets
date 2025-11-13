@@ -23,7 +23,7 @@ export default function SpaceBackground() {
     // Star field configuration with colors
     const starColors = [
       { r: 255, g: 255, b: 255 }, // White
-      { r: 214, g: 255, b: 63 }, // Lime (brand color)
+      { r: 0, g: 208, b: 132 }, // Money green (brand color)
       { r: 200, g: 180, b: 255 }, // Light purple
       { r: 180, g: 220, b: 255 }, // Light blue
       { r: 255, g: 200, b: 220 }, // Light pink

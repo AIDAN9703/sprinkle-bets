@@ -24,7 +24,7 @@ export default function Hero() {
       <div className="section-container relative z-10 w-full">
         <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 md:gap-10 lg:gap-12 items-center">
           {/* Left Column - Text Content */}
-          <div className="text-left max-w-2xl w-full order-2 lg:order-1">
+          <div className="text-left max-w-2xl w-full order-1 lg:order-1">
             <h1
               className="leading-tight tracking-tight mb-4 sm:mb-5 md:mb-6 text-foreground"
               style={{
@@ -47,7 +47,7 @@ export default function Hero() {
               <Link href="/register" className="w-full sm:w-auto">
                 <Button
                   size="lg"
-                  className="cta-primary w-full sm:w-auto text-base sm:text-lg md:text-xl px-6 sm:px-8 md:px-12 py-5 sm:py-6 md:py-8 h-auto"
+                  className="cta-primary w-full sm:w-auto text-base sm:text-lg md:text-xl px-6 sm:px-8 md:px-12 py-5 sm:py-6 md:py-8 h-auto border border-transparent"
                 >
                   Get Started
                   <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" />
@@ -123,7 +123,7 @@ export default function Hero() {
           </div>
 
           {/* Right Column - Product Example */}
-          <div className="relative w-full order-1 lg:order-2 flex items-center justify-center lg:h-[600px]">
+          <div className="relative w-full order-2 lg:order-2 flex items-center justify-center lg:h-[600px]">
             <div className="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-md">
               <ProductExample />
             </div>
